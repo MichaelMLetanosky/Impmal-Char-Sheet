@@ -516,6 +516,7 @@ select {
   width: 25px;
   height: 25px;  
   border-radius: 10%;
+  font-size: 25px;
 }
 
 .page1section8 .repcontainer[data-groupname="repeating_specializations"] .specializationName{
