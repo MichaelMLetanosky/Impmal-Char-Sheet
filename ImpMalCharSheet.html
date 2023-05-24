@@ -5,12 +5,9 @@
   </div>
   <!-- Character Background and Description -->
   <div class="page1section2">
-    <div class="nameExperience">
-      <span>Name</span><input type="text" inputmode="text" name="attr_character_name">
-      <div class="container">
-        <span>Current XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_xp">
-        <span>Spent XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_xp">
-      </div>
+    <div class="namePatron">
+      <span>Name</span><input type="text" class="longInput" name="attr_character_name">
+      <span>Patron</span><input type="text" name="attr_character_patron">
     </div>
     <div class="originFactionRole">
       <span>Origin</span>
@@ -46,11 +43,12 @@
         <option>Zealot</option>
       </select>
     </div>
-    <div>
-      <span>Patron</span><input type="text" name="attr_character_patron">
+    <div class="fateCorruptionExperience leftBorder rightBorder">
       <span>Current Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate">
       <span>Total Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate">
-      <span>Current Corruption</span><input type="text" inputmode="numeric" pattern="[0-9]*"  name="attr_current_corruption">
+      <span class="leftBorder">Current Corruption</span><input type="text" inputmode="numeric" pattern="[0-9]*"  name="attr_current_corruption">
+      <span class="leftBorder">Current XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_current_xp">
+      <span>Spent XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_spent_xp">
     </div>
   </div>
   <!-- Character Peronality -->
@@ -389,7 +387,7 @@
   </div>
   <!-- Start of Specializations -->
   <div  class="page1section8">
-    <span class="specializationHeading">Specializations</span>
+    <div class="specializationLabel"><span class="specializationHeading">Specialization</span><span>Rank</span><span>Skill</span></div>
     <fieldset class="repeating_specializations">
       <button type="action" name="act_specialization">🎲</button>
       <input type="text" name="attr_specialization_name" class= "specializationName" value="">

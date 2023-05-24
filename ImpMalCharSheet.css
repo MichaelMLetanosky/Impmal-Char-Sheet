@@ -100,12 +100,13 @@ select {
 .page1container {
   display: grid;
   grid-template-columns: 220px 40px 250px 250px;
-  grid-template-rows: 100px 190px 325px auto;
+  grid-template-rows: 100px 110px 325px 70px auto;
   gap: 5px;
   grid-template-areas: 
   "page1section1 page1section2 page1section2 page1section2"
   "page1section3 page1section3 page1section4 page1section4"
   "page1section3 page1section3 page1section5 page1section6"
+  "page1section3 page1section3 page1section8 page1section8"
   "page1section7 page1section7 page1section8 page1section8";
 }
 
@@ -113,6 +114,18 @@ select {
 
 .gridLine {
   border-right: 1px solid rgb(77, 77, 77);
+}
+
+.leftBorder {
+  margin-left: 4px;
+  padding-left: 4px;
+  border-left: 1px dashed rgb(155, 155, 155);
+}
+
+.rightBorder {
+  margin-right: 4px;
+  padding-right: 4px;
+  border-right: 1px dashed rgb(155, 155, 155);
 }
 
 /* Page 1 Section 1 */
@@ -136,32 +149,21 @@ select {
   margin-top: 1.5px;
 }
 
-.page1section2 .nameExperience span {
+.page1section2 .namePatron span {
   text-align: center;
 }
 
-.page1section2 .nameExperience input[inputmode="text"] {
-  width: 280px;
+.page1section2 .namePatron input {
+  height: 20px;
+  width: 150px;
 }
 
-.page1section2 .nameExperience .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
-  width: 225px;
-  border-left: 1px solid rgb(185, 185, 185);
+.page1section2 .namePatron .longInput {
+  width: 290px;
 }
 
-.page1section2 .nameExperience input[inputmode="numeric"] {
-  width: 60px;
-}
-
-.page1section2 .originFactionRole span{
-  font-size: 10px;
-  font-weight: bold;
+.page1section2 .originFactionRole{
+  margin-left: -8px;
 }
 
 .page1section2 .originFactionRole span{
@@ -170,20 +172,32 @@ select {
 }
 
 .page1section2 .originFactionRole select{
+  margin: 0px;
+  padding: 0px;
   background-color: rgb(233, 233, 233);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   width: fit-content;
+  height: 20px;
 }
 
-.page1section2 .bordered {
-  border: 3px ridge rgb(185, 185, 185);
-  margin-top: 2px;
-  padding: 2px;
-  height: 100%;
-  width: 225px;
-  display: flex;
-  flex-direction: column;
+.page1section2 .fateCorruptionExperience{
+  margin-bottom: -8px;
+}
+
+.page1section2 .fateCorruptionExperience span{
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.page1section2 .fateCorruptionExperience input{
+  height: 20px;
+  width: 35px;
+}
+
+.page1section2 .fateCorruptionExperience .longNumber{
+  width: 70px;
 }
 
 /* Page 1 Section 3 */
@@ -216,9 +230,10 @@ select {
 }
 
 .page1section3 h3 {
+  margin-top: 5px;
+  margin-bottom: -5px;
   text-align: center;
   font-size: 16px;
-  margin-top: 5px;
 }
 
 .page1section3 .characterDescription {
@@ -240,15 +255,15 @@ select {
 
 .page1section3 .characterDescription input {
 /*   width: 115px; */
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  height: 28px;
+  height: 22px;
 }
 
 /* Page 1 Section 4 */
 
 .page1section4 h3 {
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
   font-size: 18px;
 }
@@ -471,9 +486,17 @@ select {
 
 /* Page 1 Section 8 */
 
-.page1section8 .specializationHeading {
-  margin-bottom: 15px;
-  font-style: italic;
+.page1section8 .specializationLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 34px;
+  width: 347px;
+  font-size: 13px;
+}
+
+.page1section8 .specializationLabel .specializationHeading{
+  width: 255px;
 }
 
 .page1section8 .repcontainer[data-groupname="repeating_specializations"] > .repitem {
