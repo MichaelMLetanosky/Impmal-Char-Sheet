@@ -100,11 +100,11 @@ select {
 .page1container {
   display: grid;
   grid-template-columns: 260px 250px 250px;
-  grid-template-rows: 180px 110px 325px auto;
+  grid-template-rows: 100px 190px 325px auto;
   gap: 5px;
   grid-template-areas: 
   "page1section1 page1section2 page1section2"
-  "page1section1 page1section4 page1section4"
+  "page1section3 page1section4 page1section4"
   "page1section3 page1section5 page1section6"
   "page1section7 page1section8 page1section8";
 }
@@ -206,56 +206,12 @@ select {
   font-weight: bold;
 }
 
-.page1section2 .characterDescription {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.page1section2 .characterDescription div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 33.333%;
-}
-
-.page1section2 .characterDescription span {
-  width: 300px;
-  text-align: right;
-  font-style: italic;
-}
-
-.page1section2 .characterDescription input {
-  width: 115px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.page1section2 .fullLine {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.page1section2 .fullLine span {
-  width: 100px;
-  font-style: italic;
-  text-align: center
-}
-
-.page1section2 .fullLine input {
-  width: 400px;
-  text-align: left;
-  font-style: italic;
-}
-
 /* Page 1 Section 3 */
 
-.page1section3 div {
+.page1section3 > div {
   display: flex;
   flex-direction: column;
-
+  margin: 3px;
 }
 
 .page1section3 span {
@@ -270,6 +226,43 @@ select {
   line-height: 16px;
   font-size: 13px;
   font-weight: bold;
+}
+
+.page1section3 .characterDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.page1section3 h3 {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.page1section3 .characterDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+
+.page1section3 .characterDescription div {
+  display: flex;
+  flex-direction: column;
+}
+
+.page1section3 .characterDescription span {
+  text-align: left;
+  font-style: italic;
+}
+
+.page1section3 .characterDescription input {
+/*   width: 115px; */
+  font-size: 14px;
+  font-weight: bold;
+  height: 28px;
 }
 
 /* Page 1 Section 4 */
@@ -615,13 +608,7 @@ select {
 }
 
 #characterHandedness {
-  margin-left: -40px;
   font-size: 10px;
-}
-
-#characterDistinguishingFeatures {
-  font-size: 9px;
-  text-align: center;
 }
 
 /* Roll Template */

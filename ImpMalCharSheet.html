@@ -2,18 +2,13 @@
   <!-- Character Basics -->
   <div class="page1section1">
     <h2 class="titleName">IMPERIUM<br>MALEDICTUM</h2>
-    <div class="inputLine"><span>Name</span><input type="text" name="attr_character_name"></div>
-    <div class="inputLine"><span>Patron</span><input type="text" name="attr_character_patron"></div>
-    <div class="bordered">
-      <div class="inputHeader"><span>Current XP</span><span class="gridLine topGridLine"></span><span>Spent XP</span></div>
-      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_xp"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_xp"></div>
-      <div class="inputHeader"><span>Current Fate</span><span class="gridLine"></span><span>Total Fate</span></div>
-      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate"></div>
-      <div class="inputLine" id="corruptionDiv"><span>Current Corruption</span><input type="text" name="attr_current_corruption"></div>
-    </div>
   </div>
   <!-- Character Background and Description -->
   <div class="page1section2">
+    <div>
+      <div class="inputLine"><span>Name</span><input type="text" name="attr_character_name"></div>
+      <div class="inputLine"><span>Patron</span><input type="text" name="attr_character_patron"></div>
+    </div>
     <div class="originFactionRole">
       <div>
         <span>Origin</span>
@@ -54,25 +49,34 @@
         </select>
       </div>
     </div>
-    <div class="characterDescription">
-      <div><span>Age</span><input type="text" name="attr_character_age"></div>
-      <div><span>Height</span><input type="text" name="attr_height"></div>
-      <div><span>Hair</span><input type="text" name="attr_hair"></div>
+    <div class="bordered">
+      <div class="inputHeader"><span>Current XP</span><span class="gridLine topGridLine"></span><span>Spent XP</span></div>
+      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_xp"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_xp"></div>
+      <div class="inputHeader"><span>Current Fate</span><span class="gridLine"></span><span>Total Fate</span></div>
+      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate"></div>
+      <div class="inputLine" id="corruptionDiv"><span>Current Corruption</span><input type="text" name="attr_current_corruption"></div>
     </div>
-    <div class="characterDescription">
-      <div><span id="characterHandedness">Handedness</span><input type="text" name="attr_handedness"></div>
-      <div><span>Weight</span><input type="text" name="attr_weight"></div>
-      <div><span>Eyes</span><input type="text" name="attr_eyes"></div>
-    </div>
-    <div class="fullLine"><span id="characterDistinguishingFeatures">Distinguishing Features</span><input type="text" name="attr_distinguishing_features"></div>
-    <div class="fullLine"><span>Mutations</span><input type="text" name="attr_mutations"></div>
   </div>
   <!-- Character Peronality -->
   <div  class="page1section3">
     <div><span>Goals</span><textarea type="text" name="attr_homeworld"></textarea></div>
     <div><span>Connections</span><textarea type="text" name="attr_divination"></textarea></div>
     <div><span>Divination</span><textarea type="text" name="attr_quirk"></textarea></div>
-    <div><span>Notes</span><textarea type="text" name="attr_background"></textarea></div>
+    <h3>Description</h3>
+    <div class="characterDescriptionContainer">  
+      <div class="characterDescription">
+        <div><span>Age</span><input type="text" name="attr_character_age"></div>
+        <div><span>Height</span><input type="text" name="attr_height"></div>
+        <div><span>Hair</span><input type="text" name="attr_hair"></div>
+      </div>
+      <div class="characterDescription">
+        <div><span id="characterHandedness">Handedness</span><input type="text" name="attr_handedness"></div>
+        <div><span>Weight</span><input type="text" name="attr_weight"></div>
+        <div><span>Eyes</span><input type="text" name="attr_eyes"></div>
+      </div>
+    </div>
+    <div><span>Distinguishing Features</span><textarea type="text" name="attr_distinguishing_features"></textarea></div>
+    <div><span>Mutations & Malignancies</span><textarea type="text" name="attr_mutations"></textarea></div>
   </div>
   <!-- Start of Characteristics -->
   <div  class="page1section4">
