@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+.charsheet {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 75px;
+  background-color: rgb(233, 233, 233);
+  text-align: center;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 75px;
+  text-align: center;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 125px;
+  text-align: center;
+}
+
+.testing {
+  border: 1px solid rgb(255, 0, 0);
+}
+
+.page1section1 {
+  grid-area: page1section1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page1section2 {
+  grid-area: page1section2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page1section3 {
+  grid-area: page1section3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page1section4 {
+  grid-area: page1section4;
+}
+
+.page1section5 {
+  grid-area: page1section5;
+  margin-right: -5px;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+}
+
+.page1section5 > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page1section6 {
+  grid-area: page1section6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: -5px;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: rgb(233, 233, 233);
+}
+
+.page1section7 {
+  grid-area: page1section7;
+  display: flex;
+  flex-direction: column;
+}
+
+.page1section8 {
+  grid-area: page1section8;
+}
+
+.page1container {
+  display: grid;
+  grid-template-columns: 260px 250px 250px;
+  grid-template-rows: 180px 110px 325px auto;
+  gap: 5px;
+  grid-template-areas: 
+  "page1section1 page1section2 page1section2"
+  "page1section1 page1section4 page1section4"
+  "page1section3 page1section5 page1section6"
+  "page1section7 page1section8 page1section8";
+}
+
+/* Multi-section Classes */
+
+.gridLine {
+  border-right: 1px solid rgb(77, 77, 77);
+}
+
+/* Page 1 Section 1 */
+
+.page1section1 .titleName {
+  margin: 5px 25px 8px;
+  border: 5px groove darkgray;
+  color: black;
+  font-size: 23px;
+  font-weight: bold;
+  text-align: center;
+  grid-area: page1section1;
+}
+
+.page1section1 .bordered {
+  border: 3px ridge rgb(185, 185, 185);
+  margin-top: 2px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page1section1 .inputLine {
+  margin-top: 4px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.page1section1 .inputLine span {
+  padding-top: 4px;
+  width: 30%;
+  text-align: right;
+}
+
+.page1section1 .inputLine input {
+  margin-left: 5px;
+  margin-right: auto;
+  width: 65%;
+}
+
+.page1section1 .inputHeader {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.page1section1 .inputHeader :not(.gridLine) {
+  width: 80px;
+  text-align: center;
+}
+
+.page1section1 .inputSides {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.page1section1 .topGridLine {
+  margin-top: 4px;
+}
+
+/* Page 1 Section 2 */
+
+.page1section2 > div {
+  margin-top: 1.5px;
+}
+
+.page1section2 .originFactionRole {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.page1section2 .originFactionRole div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.page1section2 .originFactionRole span {
+  font-style: italic;
+}
+
+.page1section2 .originFactionRole select{
+  background-color: rgb(233, 233, 233);
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.page1section2 .characterDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.page1section2 .characterDescription div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 33.333%;
+}
+
+.page1section2 .characterDescription span {
+  width: 300px;
+  text-align: right;
+  font-style: italic;
+}
+
+.page1section2 .characterDescription input {
+  width: 115px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.page1section2 .fullLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.page1section2 .fullLine span {
+  width: 100px;
+  font-style: italic;
+  text-align: center
+}
+
+.page1section2 .fullLine input {
+  width: 400px;
+  text-align: left;
+  font-style: italic;
+}
+
+/* Page 1 Section 3 */
+
+.page1section3 div {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.page1section3 span {
+  font-style: italic;
+}
+
+.page1section3 textarea {
+  margin: 0px;
+  resize: none;
+  width: 94%;
+  height: 50px;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Page 1 Section 4 */
+
+.page1section4 h3 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.page1section4 .skillBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.page1section4 .skillBox div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.page1section4 .skillBox div button {
+  padding: 5px 0px;
+  border-style: none;
+  background-color: transparent;
+  width: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.page1section4 .skillBox div input {
+  padding: 5px 0px;
+  border-style: none;
+  background-color: rgb(233, 233, 233);
+  width: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Rank Cycle Styline for Sections 5, 6, & 8*/
+
+.rankCycle {
+  margin: 0px;
+  padding: 0px;  
+  background-color: white;  
+  width: 23px;
+  height: 23px;  
+  border-radius: 10%;
+  display: inline-flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.noDot {
+  display: block;
+  margin: 1px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border-color: transparent;
+}
+
+.dot {
+  display: block;
+  margin: 1px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color:black;
+}
+
+.charsheet input.rankSelect[value="0"] ~ button > :not(.rankSelect0) {
+  display: none;
+}
+
+.charsheet input.rankSelect[value="5"] ~ button > :not(.rankSelect1) {
+  display: none;
+}
+
+.charsheet input.rankSelect[value="10"] ~ button > :not(.rankSelect2) {
+  display: none;
+}
+
+.charsheet input.rankSelect[value="15"] ~ button > :not(.rankSelect3) {
+  display: none;
+}
+
+.charsheet input.rankSelect[value="20"] ~ button > :not(.rankSelect4) {
+  display: none;
+}
+
+/* Sections 5 & 6 */
+
+.skillLabels {
+  width: 193px;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.skillContainer {
+  display: flex;
+  flex-direction: row;
+  height: 26px;
+}
+
+.charsheet .skillContainer button:not(.rankCycle) {
+  border: none;
+  border-bottom: 1px dotted black;
+  background-color: transparent;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  width: 150px;
+  height: 25px;
+}
+
+.charsheet .skillContainer .rankTotal {
+  font-size: 16px;
+  width: 36px;
+  height: 28px;
+  background-color: rgb(245, 245, 245);
+}
+
+/* Repeating Section Styling for Sections 7, 8, & 9 */
+
+.repcontrol button.btn {
+  padding: 2px 2px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Page 1 Section 7 */
+
+.page1section7 .influenceHeading {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.page1section7 .influenceLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 242px;
+}
+
+.repcontainer[data-groupname="repeating_factioninfluence"] > .repitem {
+  height: auto;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 3px;
+  border-bottom: 1px solid White;
+}
+
+.repcontainer[data-groupname="repeating_factioninfluence"] .factionName {
+  width: 200px;
+  text-align: left;
+  font-size: 12.5px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.repcontainer[data-groupname="repeating_factioninfluence"] .factionBonus {
+  width: 45px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.repcontainer[data-groupname="repeating_contactinfluence"] > .repitem {
+  height: auto;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 3px;
+  border-bottom: 1px solid White;
+}
+
+.repcontainer[data-groupname="repeating_contactinfluence"] .contactName {
+  width: 100px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.repcontainer[data-groupname="repeating_contactinfluence"] .contactFaction {
+  width: 100px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+.repcontainer[data-groupname="repeating_contactinfluence"] .contactBonus {
+  width: 45px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+}
+
+/* Page 1 Section 8 */
+
+.page1section8 .specializationHeading {
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] > .repitem {
+  height: auto;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] > .repitem > button:not(.rankCycle){
+  margin: 0px;
+  padding: 0px;  
+  background-color: white;
+  border-width: 1px;  
+  width: 25px;
+  height: 25px;  
+  border-radius: 10%;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] .specializationName{
+  margin: 0px;
+  padding: 4px;
+  width: 270px;
+  height: 23px;  
+  border-radius: 3px;
+  text-align: left;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] > .repitem > button.rankCycle{
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(218, 218, 218);
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] .specializationSkill{
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(233, 233, 233);
+  height: 28px;
+  width: auto;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_specializations"] .specializationTotal{
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 36px;
+  height: 28px;
+}
+
+.page1section8 .talentsLabel {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 220px;
+  font-size: 14px;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_talents"] > .repitem {
+  height: 20px;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 3px;
+  border-bottom: 1px solid White;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_talents"] .talentName {
+  height: 100%;
+  width: 33%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.page1section8 .repcontainer[data-groupname="repeating_talents"] .talentEffect {
+  border-bottom: none;
+  height: 100%;
+  width: 66%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* ID Section */
+
+#corruptionDiv {
+  margin-top: 0px;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  width: 225px;
+}
+
+#corruptionDiv  span{
+  width: 70%;
+  text-align: right;
+  padding-right: 5px;
+}
+
+#corruptionDiv input {
+  padding: 0px;
+  width: 40px;
+  font-size: 20px;
+}
+
+#characterHandedness {
+  margin-left: -40px;
+  font-size: 10px;
+}
+
+#characterDistinguishingFeatures {
+  font-size: 9px;
+  text-align: center;
+}
+
+/* Roll Template */
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-custom {
+  margin-left: -37px;
+}
+
+.withoutavatars .sheet-rolltemplate-custom {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-custom .sheet-container {
+  border: 1px solid;
+  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
+  border-color: var(--header-bg-color);
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-custom .sheet-header {
+  background-color: var(--header-bg-color);
+  /* change text-align to center to center the header text */
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-custom .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-custom .sheet-subtitle {
+  font-size:.9em;
+}
+
+/* example colors */
+.sheet-rolltemplate-custom .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(112,32,130,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-custom .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-custom .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-custom .sheet-content {
+  display: grid;
+  background: #FFF;
+  /* Header formatting - modify the column layout below */
+  grid-template-columns: auto auto;
+  /* Line height to match default roll template */
+  line-height:1.4em;
+}
+.sheet-rolltemplate-custom .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-custom .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-custom .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-custom .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-custom .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-custom .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
