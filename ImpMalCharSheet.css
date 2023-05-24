@@ -99,14 +99,14 @@ select {
 
 .page1container {
   display: grid;
-  grid-template-columns: 260px 250px 250px;
+  grid-template-columns: 220px 40px 250px 250px;
   grid-template-rows: 100px 190px 325px auto;
   gap: 5px;
   grid-template-areas: 
-  "page1section1 page1section2 page1section2"
-  "page1section3 page1section4 page1section4"
-  "page1section3 page1section5 page1section6"
-  "page1section7 page1section8 page1section8";
+  "page1section1 page1section2 page1section2 page1section2"
+  "page1section3 page1section3 page1section4 page1section4"
+  "page1section3 page1section3 page1section5 page1section6"
+  "page1section7 page1section7 page1section8 page1section8";
 }
 
 /* Multi-section Classes */
@@ -118,92 +118,72 @@ select {
 /* Page 1 Section 1 */
 
 .page1section1 .titleName {
-  margin: 5px 25px 8px;
+  margin: 5px auto 8px;
   border: 5px groove darkgray;
-  color: black;
+  padding: 0px 5px;
   font-size: 23px;
   font-weight: bold;
   text-align: center;
-  grid-area: page1section1;
-}
-
-.page1section1 .bordered {
-  border: 3px ridge rgb(185, 185, 185);
-  margin-top: 2px;
-  padding: 2px;
-  display: flex;
-  flex-direction: column;
-}
-
-.page1section1 .inputLine {
-  margin-top: 4px;
-  width: 100%;
-  font-size: 13px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-}
-
-.page1section1 .inputLine span {
-  padding-top: 4px;
-  width: 30%;
-  text-align: right;
-}
-
-.page1section1 .inputLine input {
-  margin-left: 5px;
-  margin-right: auto;
-  width: 65%;
-}
-
-.page1section1 .inputHeader {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.page1section1 .inputHeader :not(.gridLine) {
-  width: 80px;
-  text-align: center;
-}
-
-.page1section1 .inputSides {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.page1section1 .topGridLine {
-  margin-top: 4px;
 }
 
 /* Page 1 Section 2 */
 
 .page1section2 > div {
-  margin-top: 1.5px;
-}
-
-.page1section2 .originFactionRole {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5px;
 }
 
-.page1section2 .originFactionRole div {
+.page1section2 .nameExperience span {
+  text-align: center;
+}
+
+.page1section2 .nameExperience input[inputmode="text"] {
+  width: 280px;
+}
+
+.page1section2 .nameExperience .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+  border-left: 1px solid rgb(185, 185, 185);
 }
 
-.page1section2 .originFactionRole span {
-  font-style: italic;
+.page1section2 .nameExperience input[inputmode="numeric"] {
+  width: 60px;
+}
+
+.page1section2 .originFactionRole span{
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.page1section2 .originFactionRole span{
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .page1section2 .originFactionRole select{
   background-color: rgb(233, 233, 233);
-  width: 100%;
   font-size: 12px;
   font-weight: bold;
+  width: fit-content;
+}
+
+.page1section2 .bordered {
+  border: 3px ridge rgb(185, 185, 185);
+  margin-top: 2px;
+  padding: 2px;
+  height: 100%;
+  width: 225px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Page 1 Section 3 */
@@ -268,6 +248,7 @@ select {
 /* Page 1 Section 4 */
 
 .page1section4 h3 {
+  margin-top: 15px;
   text-align: center;
   font-size: 18px;
 }
@@ -592,7 +573,7 @@ select {
   margin-top: 0px;
   padding-top: 4px;
   padding-bottom: 2px;
-  width: 225px;
+  width: 100%;
 }
 
 #corruptionDiv  span{

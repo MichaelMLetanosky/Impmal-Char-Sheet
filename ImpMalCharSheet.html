@@ -5,56 +5,52 @@
   </div>
   <!-- Character Background and Description -->
   <div class="page1section2">
-    <div>
-      <div class="inputLine"><span>Name</span><input type="text" name="attr_character_name"></div>
-      <div class="inputLine"><span>Patron</span><input type="text" name="attr_character_patron"></div>
+    <div class="nameExperience">
+      <span>Name</span><input type="text" inputmode="text" name="attr_character_name">
+      <div class="container">
+        <span>Current XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_xp">
+        <span>Spent XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_xp">
+      </div>
     </div>
     <div class="originFactionRole">
-      <div>
-        <span>Origin</span>
-        <select name="attr_origin">
-          <option selected>Agri World</option>
-          <option>Feudal World</option>
-          <option>Feral World</option>
-          <option>Forge World</option>
-          <option>Hive World</option>
-          <option>Shrine World</option>
-          <option>Schola Progenium</option>
-          <option>Voidborn</option>
-        </select>
-      </div>
-      <div>
-        <span>Faction</span>
-        <select name="attr_faction">
-          <option selected>Adeptus Astra Telepathica</option>
-          <option>Adeptus Mechanicus</option>
-          <option>Administratum</option>
-          <option>Astra Militarum</option>
-          <option>Adeptus Ministorum</option>
-          <option>The Inquisition</option>
-          <option>Imperial Fleet</option>
-          <option>Infractionist</option>
-          <option>Rogue Trader Dynasty</option>
-        </select>
-      </div>
-      <div>
-        <span>Role</span>
-        <select name="attr_role">
-          <option selected>Interlocuter</option>
-          <option>Mystic</option>
-          <option>Savant</option>
-          <option>Penumbra</option>
-          <option>Warrior</option>
-          <option>Zealot</option>
-        </select>
-      </div>
+      <span>Origin</span>
+      <select name="attr_origin">
+        <option selected>Agri World</option>
+        <option>Feudal World</option>
+        <option>Feral World</option>
+        <option>Forge World</option>
+        <option>Hive World</option>
+        <option>Shrine World</option>
+        <option>Schola Progenium</option>
+        <option>Voidborn</option>
+      </select>
+      <span>Faction</span>
+      <select name="attr_faction">
+        <option selected>Adeptus Astra Telepathica</option>
+        <option>Adeptus Mechanicus</option>
+        <option>Administratum</option>
+        <option>Astra Militarum</option>
+        <option>Adeptus Ministorum</option>
+        <option>The Inquisition</option>
+        <option>Imperial Fleet</option>
+        <option>Infractionist</option>
+        <option>Rogue Trader Dynasty</option>
+      </select>
+      <span>Role</span>
+      <select name="attr_role">
+        <option selected>Interlocuter</option>
+        <option>Mystic</option>
+        <option>Savant</option>
+        <option>Penumbra</option>
+        <option>Warrior</option>
+        <option>Zealot</option>
+      </select>
     </div>
-    <div class="bordered">
-      <div class="inputHeader"><span>Current XP</span><span class="gridLine topGridLine"></span><span>Spent XP</span></div>
-      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_xp"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_xp"></div>
-      <div class="inputHeader"><span>Current Fate</span><span class="gridLine"></span><span>Total Fate</span></div>
-      <div class="inputSides"><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate"><span class="gridLine"></span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate"></div>
-      <div class="inputLine" id="corruptionDiv"><span>Current Corruption</span><input type="text" name="attr_current_corruption"></div>
+    <div>
+      <span>Patron</span><input type="text" name="attr_character_patron">
+      <span>Current Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate">
+      <span>Total Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate">
+      <span>Current Corruption</span><input type="text" inputmode="numeric" pattern="[0-9]*"  name="attr_current_corruption">
     </div>
   </div>
   <!-- Character Peronality -->
