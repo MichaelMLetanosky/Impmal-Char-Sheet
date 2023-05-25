@@ -446,7 +446,7 @@
 <!-- Start -->
 <div class="sheet-combat">
   <!-- Initiative -->
-  <span>Inititaive</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
+  <button type="roll" name="roll_inititaive" value="[[@{selected|initiative} &{tracker}]]">Inititaive</button><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
   <!-- Wounds -->
   <!-- Worn Armor -->
   <!-- Weapons -->
@@ -574,13 +574,11 @@
           });
         });
       });
-      // Updates Initiative
+      // Updates Initiative when appropriate
       if (characteristic.attribute == 'per' || characteristic.attribute == 'ag') {
-        console.log ('Updating Initiative');
         getAttrs(['ag', 'per'], (values) => {
           const agB = Math.floor(parseInt(values.ag)/10);
           const perB = Math.floor(parseInt(values.per)/10);
-          console.log(agB, perB);
           setAttrs({initiative: agB + perB});
         });
       };
