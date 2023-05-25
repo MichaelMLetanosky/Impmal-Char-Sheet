@@ -448,6 +448,8 @@
   <!-- Initiative -->
   <button type="roll" name="roll_inititaive" value="[[@{selected|initiative} &{tracker}]]">Inititaive</button><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
   <!-- Wounds -->
+  <span>Current Wounds</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_wounds">
+  <span>Maximum Wounds</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_maximum_wounds" value=8 readonly>
   <!-- Worn Armor -->
   <!-- Weapons -->
   <!-- Armor -->
@@ -574,12 +576,22 @@
           });
         });
       });
+      // Derived Stats
       // Updates Initiative when appropriate
       if (characteristic.attribute == 'per' || characteristic.attribute == 'ag') {
         getAttrs(['ag', 'per'], (values) => {
           const agB = Math.floor(parseInt(values.ag)/10);
           const perB = Math.floor(parseInt(values.per)/10);
           setAttrs({initiative: agB + perB});
+        });
+      };
+      // Updates Maximum Wounds when appropriate
+      if (characteristic.attribute == 'str' || characteristic.attribute == 'tgh' || characteristic.attribute == 'wil') {
+        getAttrs(['str', 'tgh', 'wil'], (values) => {
+          const strB = Math.floor(parseInt(values.str)/10);
+          const tghB = Math.floor(parseInt(values.tgh)/10);
+          const wilB = Math.floor(parseInt(values.wil)/10);
+          setAttrs({maximum_wounds: strB + 2*tghB + wilB});
         });
       };
     });
