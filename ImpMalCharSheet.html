@@ -446,6 +446,7 @@
 <!-- Start -->
 <div class="sheet-combat">
   <!-- Initiative -->
+  <span>Inititaive</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
   <!-- Wounds -->
   <!-- Worn Armor -->
   <!-- Weapons -->
@@ -554,6 +555,7 @@
           setAttrs({[skill_name]: skill_total}); //Sets the skill total
         });
       });
+      // Checks Specializations for matching skills and updates them
       getSectionIDs('repeating_specializations', (lookup) => {
         lookup.map(id => 'repeating_specializations_'+id+'_specialization_skill')//Get the ids and skills of all the specializations
         getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_specialization_skill'), (specializationskills) => {
@@ -572,6 +574,16 @@
           });
         });
       });
+      // Updates Initiative
+      if (characteristic.attribute == 'per' || characteristic.attribute == 'ag') {
+        console.log ('Updating Initiative');
+        getAttrs(['ag', 'per'], (values) => {
+          const agB = Math.floor(parseInt(values.ag)/10);
+          const perB = Math.floor(parseInt(values.per)/10);
+          console.log(agB, perB);
+          setAttrs({initiative: agB + perB});
+        });
+      };
     });
   });
 
