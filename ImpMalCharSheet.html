@@ -1,434 +1,450 @@
-<div class="page1container">
-  <!-- Character Basics -->
-  <div class="page1section1">
-    <h2 class="titleName">IMPERIUM<br>MALEDICTUM</h2>
+<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="character"  />
+
+<div class="sheetTabs">
+  <button type="action" name="act_character" class="characterTabButton">Character</button>
+  <button type="action" name="act_combat" class="combatTabButton">Combat</button>
+</div>
+
+<!-- PAGE 1 -->
+<!-- Start -->
+<div class="sheet-character">
+  <div class="page1container">
+    <!-- Character Basics -->
+    <div class="page1section1">
+      <h2 class="titleName">IMPERIUM<br>MALEDICTUM</h2>
+    </div>
+    <!-- Character Background and Description -->
+    <div class="page1section2">
+      <div class="namePatron">
+        <span>Name</span><input type="text" class="longInput" name="attr_character_name">
+        <span>Patron</span><input type="text" name="attr_character_patron">
+      </div>
+      <div class="originFactionRole">
+        <span>Origin</span>
+        <select name="attr_origin">
+          <option selected>Agri World</option>
+          <option>Feudal World</option>
+          <option>Feral World</option>
+          <option>Forge World</option>
+          <option>Hive World</option>
+          <option>Shrine World</option>
+          <option>Schola Progenium</option>
+          <option>Voidborn</option>
+        </select>
+        <span>Faction</span>
+        <select name="attr_faction">
+          <option selected>Adeptus Astra Telepathica</option>
+          <option>Adeptus Mechanicus</option>
+          <option>Administratum</option>
+          <option>Astra Militarum</option>
+          <option>Adeptus Ministorum</option>
+          <option>The Inquisition</option>
+          <option>Imperial Fleet</option>
+          <option>Infractionist</option>
+          <option>Rogue Trader Dynasty</option>
+        </select>
+        <span>Role</span>
+        <select name="attr_role">
+          <option selected>Interlocuter</option>
+          <option>Mystic</option>
+          <option>Savant</option>
+          <option>Penumbra</option>
+          <option>Warrior</option>
+          <option>Zealot</option>
+        </select>
+      </div>
+      <div class="fateCorruptionExperience leftBorder rightBorder">
+        <span>Current Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate">
+        <span>Total Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate">
+        <span class="leftBorder">Current Corruption</span><input type="text" inputmode="numeric" pattern="[0-9]*"  name="attr_current_corruption">
+        <span class="leftBorder">Current XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_current_xp">
+        <span>Spent XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_spent_xp">
+      </div>
+    </div>
+    <!-- Character Peronality -->
+    <div  class="page1section3">
+      <div><span>Goals</span><textarea type="text" name="attr_homeworld"></textarea></div>
+      <div><span>Connections</span><textarea type="text" name="attr_divination"></textarea></div>
+      <div><span>Divination</span><textarea type="text" name="attr_quirk"></textarea></div>
+      <h3>Description</h3>
+      <div class="characterDescriptionContainer">  
+        <div class="characterDescription">
+          <div><span>Age</span><input type="text" name="attr_character_age"></div>
+          <div><span>Height</span><input type="text" name="attr_height"></div>
+          <div><span>Hair</span><input type="text" name="attr_hair"></div>
+        </div>
+        <div class="characterDescription">
+          <div><span id="characterHandedness">Handedness</span><input type="text" name="attr_handedness"></div>
+          <div><span>Weight</span><input type="text" name="attr_weight"></div>
+          <div><span>Eyes</span><input type="text" name="attr_eyes"></div>
+        </div>
+      </div>
+      <div><span>Distinguishing Features</span><textarea type="text" name="attr_distinguishing_features"></textarea></div>
+      <div><span>Mutations & Malignancies</span><textarea type="text" name="attr_mutations"></textarea></div>
+    </div>
+    <!-- Start of Characteristics -->
+    <div  class="page1section4">
+      <h3>──Characteristics──</h3>
+      <div class="skillBox">
+        <div>
+          <button type="action" name="act_ws">WS</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ws" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_bs">BS</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" type="number" name="attr_bs" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_str">Str</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_str" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_tgh">Tgh</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_tgh" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_ag">Ag</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ag" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_int">Int</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_int"value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_per">Per</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_per" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_wil">Wil</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_wil" value=20>
+        </div>
+        <span class="gridLine"></span>
+        <div>
+          <button type="action" name="act_fel">Fel</button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_fel" value=20>
+        </div>
+      </div>
+    </div>
+    <!-- Start of Skills -->
+    <div class="page1section5"><div class="gridLine">
+      <div class="skillLabels"><span>Skill</span><span>Rank<span></div>
+      <div class="skillContainer">
+        <button type="action" name="act_athletics">Athletics(Str)</button>
+        <input type="hidden" name="attr_athletics_rank" class="rankSelect" value=0>
+        <button type="action" name="act_athletics_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_athletics" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_awareness">Awareness(Per)</button>
+        <input type="hidden" name="attr_awareness_rank" class="rankSelect" value=0>
+        <button type="action" name="act_awareness_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_awareness" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_dexterity">Dexterity(Ag)</button>
+        <input type="hidden" name="attr_dexterity_rank" class="rankSelect" value=0>
+        <button type="action" name="act_dexterity_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_dexterity" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_discipline">Discipline(Wil)</button>
+        <input type="hidden" name="attr_discipline_rank" class="rankSelect" value=0>
+        <button type="action" name="act_discipline_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_discipline" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_fortitude">Fortitude(Tgh)</button>
+        <input type="hidden" name="attr_fortitude_rank" class="rankSelect" value=0>
+        <button type="action" name="act_fortitude_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_fortitude" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_intuition">Intuition(Per)</button>
+        <input type="hidden" name="attr_intuition_rank" class="rankSelect" value=0>
+        <button type="action" name="act_intuition_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_intuition" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_linguistics">Linguistics(Int)</button>
+        <input type="hidden" name="attr_linguistics_rank" class="rankSelect" value=0>
+        <button type="action" name="act_linguistics_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_linguistics" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_logic">Logic(Int)</button>
+        <input type="hidden" name="attr_logic_rank" class="rankSelect" value=0>
+        <button type="action" name="act_logic_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_logic" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_lore">Lore(Int)</button>
+        <input type="hidden" name="attr_lore_rank" class="rankSelect" value=0>
+        <button type="action" name="act_lore_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_lore" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_medicae">Medicae(Int)</button>
+        <input type="hidden" name="attr_medicae_rank" class="rankSelect" value=0>
+        <button type="action" name="act_medicae_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_medicae" class="rankTotal" value=20 readonly>
+      </div>
+    </div></div>
+    <!-- Skills Continued -->
+    <div  class="page1section6">
+      <div class="skillLabels"><span>Skill</span><span>Rank<span></div>
+      <div class="skillContainer">
+        <button type="action" name="act_melee">Melee(WS)</button>
+        <input type="hidden" name="attr_melee_rank" class="rankSelect" value=0>
+        <button type="action" name="act_melee_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_melee" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_navigation">Navigation(Int)</button>
+        <input type="hidden" name="attr_navigation_rank" class="rankSelect" value=0>
+        <button type="action" name="act_navigation_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_navigation" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_presence">Presence(Wil)</button>
+        <input type="hidden" name="attr_presence_rank" class="rankSelect" value=0>
+        <button type="action" name="act_presence_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_presence" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_piloting">Piloting(Ag)</button>
+        <input type="hidden" name="attr_piloting_rank" class="rankSelect" value=0>
+        <button type="action" name="act_piloting_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_piloting" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_psychic_mastery">Psychic Mastery(Wil)</button>
+        <input type="hidden" name="attr_psychic_mastery_rank" class="rankSelect" value=0>
+        <button type="action" name="act_psychic_mastery_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_psychic_mastery" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_ranged">Ranged(BS)</button>
+        <input type="hidden" name="attr_ranged_rank" class="rankSelect" value=0>
+        <button type="action" name="act_ranged_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ranged" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_rapport">Rapport(Wil)</button>
+        <input type="hidden" name="attr_rapport_rank" class="rankSelect" value=0>
+        <button type="action" name="act_rapport_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_rapport" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_reflexes">Reflexes(Ag)</button>
+        <input type="hidden" name="attr_reflexes_rank" class="rankSelect" value=0>
+        <button type="action" name="act_reflexes_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_reflexes" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_stealth">Stealth(Ag)</button>
+        <input type="hidden" name="attr_stealth_rank" class="rankSelect" value=0>
+        <button type="action" name="act_stealth_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_stealth" class="rankTotal" value=20 readonly>
+      </div>
+      <div class="skillContainer">
+        <button type="action" name="act_tech">Tech(Int)</button>
+        <input type="hidden" name="attr_tech_rank" class="rankSelect" value=0>
+        <button type="action" name="act_tech_rank_cycle" class="rankCycle">
+          <div class="noDot rankSelect0"></div>
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_tech" class="rankTotal" value=20 readonly>
+      </div>
+    </div>
+    <!-- Start of Influence -->
+    <div  class="page1section7">
+      <span class="influenceHeading">Influence</span>
+      <div class="influenceLabel"><span>Faction</span><span>Infl</span></div>
+      <fieldset class="repeating_factioninfluence">
+        <input type="text" name="attr_factionname" class= "factionName" value="">
+        <input type="number" name="attr_factionbonus" min="-5" max="5" class="factionBonus" value=0>
+      </fieldset>
+      <div class="influenceLabel"><span>Contact</span><span>Faction</span><span>Infl</span></div>
+      <fieldset class="repeating_contactinfluence">
+        <input type="text" name="attr_contactname" class= "contactName" value="">
+        <input type="text" name="attr_contactfaction" class= "contactFaction" value="">
+        <input type="number" name="attr_contactbonus" min="-5" max="5" class="contactBonus" value=0>
+      </fieldset>
+    </div>
+    <!-- Start of Specializations -->
+    <div  class="page1section8">
+      <div class="specializationLabel"><span class="specializationHeading">Specialization</span><span>Rank</span><span>Skill</span></div>
+      <fieldset class="repeating_specializations">
+        <button type="action" name="act_specialization" style="font-family: 'dicefontd10'">T</button>
+        <input type="text" name="attr_specialization_name" class= "specializationName" value="">
+        <input type="hidden" name="attr_specialization_rank" class="rankSelect" value=5>
+        <button type="action" name="act_specializationrankcycle" class="rankCycle">
+          <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect3 rankSelect4"></div>
+          <div class="dot rankSelect4"></div>
+        </button>
+        <select type="text" name="attr_specialization_skill" class="specializationSkill"> 
+          <option value="n/a" selected>Skill</option>
+          <option value="athletics">Athletics</option>
+          <option value="awareness">Awareness</option>
+          <option value="dexterity">Dexterity</option>
+          <option value="discipline">Discipline</option>
+          <option value="fortitude">Fortitude</option>
+          <option value="intuition">Intuition</option>
+          <option value="linguistics">Linguistics</option>
+          <option value="logic">Logic</option>
+          <option value="lore">Lore</option>
+          <option value="medicae">Medicae</option>
+          <option value="melee">Melee</option>
+          <option value="navigation">Navigation</option>
+          <option value="presence">Presence</option>
+          <option value="piloting">Piloting</option>
+          <option value="psychic_mastery">Psychic Mastery</option>
+          <option value="ranged">Ranged</option>
+          <option value="rapport">Rapport</option>
+          <option value="reflexes">Reflexes</option>
+          <option value="stealth">Stealth</option>
+          <option value="tech">Tech</option>
+        </select>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_specialization" class="specializationTotal" value="" readonly>
+      </fieldset>
+      <div class="talentsLabel"><span>Talent</span><span>Effect</span></div>
+      <fieldset class="repeating_talents">
+        <input type="text" name="attr_talentname" class= "talentName" value="">
+        <input type="text" name="attr_talenteffect" class="talentEffect" value="">
+      </fieldset>
+    </div>
   </div>
-  <!-- Character Background and Description -->
-  <div class="page1section2">
-    <div class="namePatron">
-      <span>Name</span><input type="text" class="longInput" name="attr_character_name">
-      <span>Patron</span><input type="text" name="attr_character_patron">
-    </div>
-    <div class="originFactionRole">
-      <span>Origin</span>
-      <select name="attr_origin">
-        <option selected>Agri World</option>
-        <option>Feudal World</option>
-        <option>Feral World</option>
-        <option>Forge World</option>
-        <option>Hive World</option>
-        <option>Shrine World</option>
-        <option>Schola Progenium</option>
-        <option>Voidborn</option>
-      </select>
-      <span>Faction</span>
-      <select name="attr_faction">
-        <option selected>Adeptus Astra Telepathica</option>
-        <option>Adeptus Mechanicus</option>
-        <option>Administratum</option>
-        <option>Astra Militarum</option>
-        <option>Adeptus Ministorum</option>
-        <option>The Inquisition</option>
-        <option>Imperial Fleet</option>
-        <option>Infractionist</option>
-        <option>Rogue Trader Dynasty</option>
-      </select>
-      <span>Role</span>
-      <select name="attr_role">
-        <option selected>Interlocuter</option>
-        <option>Mystic</option>
-        <option>Savant</option>
-        <option>Penumbra</option>
-        <option>Warrior</option>
-        <option>Zealot</option>
-      </select>
-    </div>
-    <div class="fateCorruptionExperience leftBorder rightBorder">
-      <span>Current Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_fate">
-      <span>Total Fate</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_spent_fate">
-      <span class="leftBorder">Current Corruption</span><input type="text" inputmode="numeric" pattern="[0-9]*"  name="attr_current_corruption">
-      <span class="leftBorder">Current XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_current_xp">
-      <span>Spent XP</span><input type="text" inputmode="numeric" pattern="[0-9]*" class="longNumber" name="attr_spent_xp">
-    </div>
-  </div>
-  <!-- Character Peronality -->
-  <div  class="page1section3">
-    <div><span>Goals</span><textarea type="text" name="attr_homeworld"></textarea></div>
-    <div><span>Connections</span><textarea type="text" name="attr_divination"></textarea></div>
-    <div><span>Divination</span><textarea type="text" name="attr_quirk"></textarea></div>
-    <h3>Description</h3>
-    <div class="characterDescriptionContainer">  
-      <div class="characterDescription">
-        <div><span>Age</span><input type="text" name="attr_character_age"></div>
-        <div><span>Height</span><input type="text" name="attr_height"></div>
-        <div><span>Hair</span><input type="text" name="attr_hair"></div>
-      </div>
-      <div class="characterDescription">
-        <div><span id="characterHandedness">Handedness</span><input type="text" name="attr_handedness"></div>
-        <div><span>Weight</span><input type="text" name="attr_weight"></div>
-        <div><span>Eyes</span><input type="text" name="attr_eyes"></div>
-      </div>
-    </div>
-    <div><span>Distinguishing Features</span><textarea type="text" name="attr_distinguishing_features"></textarea></div>
-    <div><span>Mutations & Malignancies</span><textarea type="text" name="attr_mutations"></textarea></div>
-  </div>
-  <!-- Start of Characteristics -->
-  <div  class="page1section4">
-    <h3>──Characteristics──</h3>
-    <div class="skillBox">
-      <div>
-        <button type="action" name="act_ws">WS</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ws" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_bs">BS</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" type="number" name="attr_bs" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_str">Str</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_str" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_tgh">Tgh</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_tgh" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_ag">Ag</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ag" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_int">Int</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_int"value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_per">Per</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_per" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_wil">Wil</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_wil" value=20>
-      </div>
-      <span class="gridLine"></span>
-      <div>
-        <button type="action" name="act_fel">Fel</button>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_fel" value=20>
-      </div>
-    </div>
-  </div>
-  <!-- Start of Skills -->
-  <div class="page1section5"><div class="gridLine">
-    <div class="skillLabels"><span>Skill</span><span>Rank<span></div>
-    <div class="skillContainer">
-      <button type="action" name="act_athletics">Athletics(Str)</button>
-      <input type="hidden" name="attr_athletics_rank" class="rankSelect" value=0>
-      <button type="action" name="act_athletics_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_athletics" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_awareness">Awareness(Per)</button>
-      <input type="hidden" name="attr_awareness_rank" class="rankSelect" value=0>
-      <button type="action" name="act_awareness_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_awareness" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_dexterity">Dexterity(Ag)</button>
-      <input type="hidden" name="attr_dexterity_rank" class="rankSelect" value=0>
-      <button type="action" name="act_dexterity_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_dexterity" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_discipline">Discipline(Wil)</button>
-      <input type="hidden" name="attr_discipline_rank" class="rankSelect" value=0>
-      <button type="action" name="act_discipline_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_discipline" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_fortitude">Fortitude(Tgh)</button>
-      <input type="hidden" name="attr_fortitude_rank" class="rankSelect" value=0>
-      <button type="action" name="act_fortitude_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_fortitude" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_intuition">Intuition(Per)</button>
-      <input type="hidden" name="attr_intuition_rank" class="rankSelect" value=0>
-      <button type="action" name="act_intuition_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_intuition" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_linguistics">Linguistics(Int)</button>
-      <input type="hidden" name="attr_linguistics_rank" class="rankSelect" value=0>
-      <button type="action" name="act_linguistics_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_linguistics" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_logic">Logic(Int)</button>
-      <input type="hidden" name="attr_logic_rank" class="rankSelect" value=0>
-      <button type="action" name="act_logic_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_logic" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_lore">Lore(Int)</button>
-      <input type="hidden" name="attr_lore_rank" class="rankSelect" value=0>
-      <button type="action" name="act_lore_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_lore" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_medicae">Medicae(Int)</button>
-      <input type="hidden" name="attr_medicae_rank" class="rankSelect" value=0>
-      <button type="action" name="act_medicae_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_medicae" class="rankTotal" value=20 readonly>
-    </div>
-  </div></div>
-  <!-- Skills Continued -->
-  <div  class="page1section6">
-    <div class="skillLabels"><span>Skill</span><span>Rank<span></div>
-    <div class="skillContainer">
-      <button type="action" name="act_melee">Melee(WS)</button>
-      <input type="hidden" name="attr_melee_rank" class="rankSelect" value=0>
-      <button type="action" name="act_melee_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_melee" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_navigation">Navigation(Int)</button>
-      <input type="hidden" name="attr_navigation_rank" class="rankSelect" value=0>
-      <button type="action" name="act_navigation_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_navigation" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_presence">Presence(Wil)</button>
-      <input type="hidden" name="attr_presence_rank" class="rankSelect" value=0>
-      <button type="action" name="act_presence_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_presence" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_piloting">Piloting(Ag)</button>
-      <input type="hidden" name="attr_piloting_rank" class="rankSelect" value=0>
-      <button type="action" name="act_piloting_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_piloting" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_psychic_mastery">Psychic Mastery(Wil)</button>
-      <input type="hidden" name="attr_psychic_mastery_rank" class="rankSelect" value=0>
-      <button type="action" name="act_psychic_mastery_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_psychic_mastery" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_ranged">Ranged(BS)</button>
-      <input type="hidden" name="attr_ranged_rank" class="rankSelect" value=0>
-      <button type="action" name="act_ranged_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_ranged" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_rapport">Rapport(Wil)</button>
-      <input type="hidden" name="attr_rapport_rank" class="rankSelect" value=0>
-      <button type="action" name="act_rapport_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_rapport" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_reflexes">Reflexes(Ag)</button>
-      <input type="hidden" name="attr_reflexes_rank" class="rankSelect" value=0>
-      <button type="action" name="act_reflexes_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_reflexes" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_stealth">Stealth(Ag)</button>
-      <input type="hidden" name="attr_stealth_rank" class="rankSelect" value=0>
-      <button type="action" name="act_stealth_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_stealth" class="rankTotal" value=20 readonly>
-    </div>
-    <div class="skillContainer">
-      <button type="action" name="act_tech">Tech(Int)</button>
-      <input type="hidden" name="attr_tech_rank" class="rankSelect" value=0>
-      <button type="action" name="act_tech_rank_cycle" class="rankCycle">
-        <div class="noDot rankSelect0"></div>
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_tech" class="rankTotal" value=20 readonly>
-    </div>
-  </div>
-  <!-- Start of Influence -->
-  <div  class="page1section7">
-    <span class="influenceHeading">Influence</span>
-    <div class="influenceLabel"><span>Faction</span><span>Infl</span></div>
-    <fieldset class="repeating_factioninfluence">
-      <input type="text" name="attr_factionname" class= "factionName" value="">
-      <input type="number" name="attr_factionbonus" min="-5" max="5" class="factionBonus" value=0>
-    </fieldset>
-    <div class="influenceLabel"><span>Contact</span><span>Faction</span><span>Infl</span></div>
-    <fieldset class="repeating_contactinfluence">
-      <input type="text" name="attr_contactname" class= "contactName" value="">
-      <input type="text" name="attr_contactfaction" class= "contactFaction" value="">
-      <input type="number" name="attr_contactbonus" min="-5" max="5" class="contactBonus" value=0>
-    </fieldset>
-  </div>
-  <!-- Start of Specializations -->
-  <div  class="page1section8">
-    <div class="specializationLabel"><span class="specializationHeading">Specialization</span><span>Rank</span><span>Skill</span></div>
-    <fieldset class="repeating_specializations">
-      <button type="action" name="act_specialization" style="font-family: 'dicefontd10'">T</button>
-      <input type="text" name="attr_specialization_name" class= "specializationName" value="">
-      <input type="hidden" name="attr_specialization_rank" class="rankSelect" value=5>
-      <button type="action" name="act_specializationrankcycle" class="rankCycle">
-        <div class="dot rankSelect1 rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect2 rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect3 rankSelect4"></div>
-        <div class="dot rankSelect4"></div>
-      </button>
-      <select type="text" name="attr_specialization_skill" class="specializationSkill"> 
-        <option value="n/a" selected>Skill</option>
-        <option value="athletics">Athletics</option>
-        <option value="awareness">Awareness</option>
-        <option value="dexterity">Dexterity</option>
-        <option value="discipline">Discipline</option>
-        <option value="fortitude">Fortitude</option>
-        <option value="intuition">Intuition</option>
-        <option value="linguistics">Linguistics</option>
-        <option value="logic">Logic</option>
-        <option value="lore">Lore</option>
-        <option value="medicae">Medicae</option>
-        <option value="melee">Melee</option>
-        <option value="navigation">Navigation</option>
-        <option value="presence">Presence</option>
-        <option value="piloting">Piloting</option>
-        <option value="psychic_mastery">Psychic Mastery</option>
-        <option value="ranged">Ranged</option>
-        <option value="rapport">Rapport</option>
-        <option value="reflexes">Reflexes</option>
-        <option value="stealth">Stealth</option>
-        <option value="tech">Tech</option>
-      </select>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_specialization" class="specializationTotal" value="" readonly>
-    </fieldset>
-    <div class="talentsLabel"><span>Talent</span><span>Effect</span></div>
-    <fieldset class="repeating_talents">
-      <input type="text" name="attr_talentname" class= "talentName" value="">
-      <input type="text" name="attr_talenteffect" class="talentEffect" value="">
-    </fieldset>
-  </div>
+</div>
+
+<!-- PAGE 2 -->
+<!-- Start -->
+<div class="sheet-combat">
 </div>
 
 <!-- Roll Template -->
@@ -461,6 +477,16 @@
 
 <!-- Sheet Workers -->
 <script type="text/worker">
+
+  // For Tabs
+  const buttonlist = ["character","combat"];
+  buttonlist.forEach(button => {
+      on(`clicked:${button}`, function() {
+          setAttrs({
+              sheetTab: button
+          });
+      });
+  });
   
   // Array of all Attributes to assist in making event listeners
   const characteristics = [
