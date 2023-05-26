@@ -493,7 +493,16 @@
   <fieldset class="repeating_weapons">
     <button type="action" name="act_specialization" style="font-family: 'dicefontd10'">T</button>
     <input type="text" name="attr_weaponname" class="weaponName" value="">
-    <select name="attr_weaponspecialization" id="weaponSpecialization"></select>
+    <select name="attr_weaponspecialization" id="weaponSpecialization">
+      <option value="n/a" selected></option>
+      <option value="brawling">Brawling</option>
+      <option value="one-handed">One-Handed</option>
+      <option value="two-handed">Two-Handed</option>
+      <option value="pistol">Pistol</option>
+      <option value="long gun">Long Gun</option>
+      <option value="ordanance">Ordnance</option>
+      <option value="thrown">Thrown</option>
+    </select>
     <input type="text" name="attr_weapontest" class="weaponTest" value="20" readonly>
     <input type="text" name="attr_weapondamage" class="weaponDamage" value="">
     <input type="text" name="attr_weaponrange" class="weaponRange" value="">
@@ -591,7 +600,7 @@
   {attribute:'fortitude', name:'Fortitude', characteristic:'tgh'}
   ];
 
-// ---Updaters---
+// ---Stat Updaters---
   // Event Listener for change to Characteristics & Skill ranks
   characteristics.forEach(characteristic => {
     on(`change:${characteristic.attribute} ${characteristic.skills.map(skill => 'change:'+skill+'_rank').join(' ')}`, () => { //Listens for changes to the characteristic and all skills effected by it
@@ -608,7 +617,6 @@
       });
       // Checks Specializations for matching skills and updates them
       getSectionIDs('repeating_specializations', (lookup) => {
-        lookup.map(id => 'repeating_specializations_'+id+'_specialization_skill')//Get the ids and skills of all the specializations
         getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_specialization_skill'), (specializationskills) => {
           let matches = [];
           characteristic.skills.forEach(potentialskill => {
@@ -658,6 +666,30 @@
         const specialization_rank = parseInt(Object.values(values)[1]);
         let specialization_total = specialization_skill + specialization_rank;
         setAttrs({repeating_specializations_specialization: specialization_total});
+      });
+    });
+  });
+
+  // Weapon stat Updaters
+  on('change:repeating_weapons:weaponspecialization', function(event) {
+    console.log(event);
+    getSectionIDs('repeating_specializations', (lookup) => {//Get the ids and skills of all the specializations
+      console.log(lookup)
+     getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_name'), (specializationnames) => {
+      console.log(specializationnames)
+//        let matches = [];
+//        characteristic.skills.forEach(potential => {
+//          const holder = Object.entries(specializationskills).filter(item => item[1] == potentialskill);
+//          matches = matches.concat(holder); //Searches through the specializations to find the ones that need updating
+//        });
+//        getAttrs([...matches.map(item => 'repeating_specializations_'+item[0].split('_')[2]+'_specialization_rank'), ...characteristic.skills], (specializationvalues) => {
+//          matches.forEach(item => {
+//            const specialization_skill = specializationvalues[item[1]]; //Grabs the skill stat of the specialization
+//            const specialization_rank = parseInt(specializationvalues['repeating_specializations_'+item[0].split('_')[2]+'_specialization_rank']); //Grabs the skill bonus of the specialization
+//            const specialization_total = specialization_skill + specialization_rank; //Adds the skill bonus and rank together
+//            setAttrs({['repeating_specializations_'+item[0].split('_')[2]+'_specialization']: specialization_total}); //Sets the specialization total
+//          });
+//        });
       });
     });
   });
@@ -771,7 +803,7 @@
       attributeRoll(parseInt(Object.values(values)[0]), Object.values(values)[1]);
     });
   });
-
+  
 </script>
 
 
