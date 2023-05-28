@@ -679,8 +679,7 @@
 
   // Weapon stat Updaters
   on('change:repeating_weapons:weaponspecialization', function(event) {
-    // Checks if a new specialization has been chosen or resets to default 20
-    if (event.newValue == 'n/a') {
+    if (event.newValue == 'n/a') {  // Checks if a new specialization has been chosen or resets to default 20
       setAttrs({repeating_weapons_weapontest: 20});
       return;
     }
@@ -709,8 +708,38 @@
     });
   });
 
-  on('change:repeating_specializations:specialization', function(event) {
+  on('change:repeating_specializations:specialization change:repeating_specializations:specialization_name', function(event) {
     console.log(event);
+    getSectionIDs('repeating_weapons', (lookup) => {
+      getAttrs(['repeating_specializations_specialization_name', 'repeating_specializations_specialization', ...lookup.map(id => 'repeating_weapons_'+id+'_weaponspecialization')], (values) => {
+        const specialization_name = Object.values(values)[0].toLowerCase().split(' ').join('').split('-').join('');
+        if (specialization_name == 'n/a') {
+          return;
+        }
+        const specialization_value = parseInt(Object.values(values)[1]);
+        delete values[Object.keys(values)[0]];
+
+        let newMatches = Object.entries(values).filter(item => item[1] == specialization_name);
+        if(newMatches.legth == 0) {
+          return;
+        }
+        newMatches.forEach(item => {
+          setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weapontest']: specialization_value});
+        });
+
+        previousValue = event.previousValue.toLowerCase().split(' ').join('').split('-').join('');
+        let oldMatches = Object.entries(values).filter(item => item[1] == previousValue);
+        console.log(previousValue, oldMatches);
+        if (oldMatches.length == 0) {
+          return;
+        }
+        oldMatches.forEach(item => {
+          console.log("updating")
+          setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weaponspecialization']: 'n/a'});// Changes value to trigger recalculation
+          setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weaponspecialization']: previousValue});
+        });
+      });
+    });
   });
 
 // ---Rank Updaters---
