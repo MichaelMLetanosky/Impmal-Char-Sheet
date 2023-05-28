@@ -500,13 +500,14 @@
       <option value="twohanded">Two-Handed</option>
       <option value="pistol">Pistol</option>
       <option value="longgun">Long Gun</option>
-      <option value="ordanance">Ordnance</option>
+      <option value="ordnance">Ordnance</option>
       <option value="thrown">Thrown</option>
     </select>
     <input type="text" name="attr_weapontest" class="weaponTest" value="20" readonly>
     <input type="text" name="attr_weapondamage" class="weaponDamage" value="">
     <input type="text" name="attr_weaponrange" class="weaponRange" value="">
-    <input type="text" name="attr_weaponmag" class="weaponMag" value="">
+    <input type="text" name="attr_weaponmagcurrent" class="weaponMagCurrent" value="">
+    <input type="text" name="attr_weaponmagmax" class="weaponMagMax" value="">
     <input type="text" name="attr_weaponenc" class="weaponEnc" value="">
     <input type="text" name="attr_weapontraits" class="weaponTraits" value="">
   </fieldset>
@@ -678,26 +679,38 @@
 
   // Weapon stat Updaters
   on('change:repeating_weapons:weaponspecialization', function(event) {
-    console.log(event);
+    // Checks if a new specialization has been chosen or resets to default 20
+    if (event.newValue == 'n/a') {
+      setAttrs({repeating_weapons_weapontest: 20});
+      return;
+    }
     getSectionIDs('repeating_specializations', (lookup) => {//Get the ids and skills of all the specializations
-     getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_specialization_name'), (specializationnames) => {
-      const specialization_id = getKeyByValue(specializationnames, event.newValue);
-      console.log(specialization_id)
-//        let matches = [];
-//        characteristic.skills.forEach(potential => {
-//          const holder = Object.entries(specializationskills).filter(item => item[1] == potentialskill);
-//          matches = matches.concat(holder); //Searches through the specializations to find the ones that need updating
-//        });
-//        getAttrs([...matches.map(item => 'repeating_specializations_'+item[0].split('_')[2]+'_specialization_rank'), ...characteristic.skills], (specializationvalues) => {
-//          matches.forEach(item => {
-//            const specialization_skill = specializationvalues[item[1]]; //Grabs the skill stat of the specialization
-//            const specialization_rank = parseInt(specializationvalues['repeating_specializations_'+item[0].split('_')[2]+'_specialization_rank']); //Grabs the skill bonus of the specialization
-//            const specialization_total = specialization_skill + specialization_rank; //Adds the skill bonus and rank together
-//            setAttrs({['repeating_specializations_'+item[0].split('_')[2]+'_specialization']: specialization_total}); //Sets the specialization total
-//          });
-//        });
+      getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_specialization_name'), (specializationnames) => {
+        // Pulls all names of specialization, removes spaces and dashes, makes all lowercase and checks for a match
+        const specialization_id = Object.keys(specializationnames).find(key => specializationnames[key].toLowerCase().split(' ').join('').split('-').join('') === event.newValue) || 'not found';
+        // If no match is found sets test to base melee or ranged based on chosen skill
+        if (specialization_id == 'not found' && (event.newValue == 'brawling' || event.newValue == 'onehanded' || event.newValue == 'twohanded')) {
+          getAttrs(['melee'], (melee) => {
+            setAttrs({repeating_weapons_weapontest: parseInt(Object.values(melee)[0])});
+          });
+          return;
+        }
+        if (specialization_id == 'not found' && (event.newValue == 'pistol' || event.newValue == 'longgun' || event.newValue == 'ordnance' || event.newValue == 'thrown')) {
+          getAttrs(['ranged'], (ranged) => {
+            setAttrs({repeating_weapons_weapontest: parseInt(Object.values(ranged)[0])});
+          });
+          return;
+        }
+        // If a match is found sets test to specialization
+        getAttrs(['repeating_specializations_'+specialization_id.split('_')[2]+'_specialization'], (specializationvalue) => {
+          setAttrs({repeating_weapons_weapontest: Object.values(specializationvalue)[0]});
+        });
       });
     });
+  });
+
+  on('change:repeating_specializations:specialization', function(event) {
+    console.log(event);
   });
 
 // ---Rank Updaters---
