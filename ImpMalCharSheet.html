@@ -837,7 +837,9 @@
   });
 
   on('change:repeating_psychicpowers:psychicpowersdifficulty', function(event) {
-    console.log(event)
+    getAttrs(['psychic_mastery', 'repeating_psychicpowers_psychicpowersdifficulty'], (values) => {
+      setAttrs({['repeating_psychicpowers_psychicpowerstest']: parseInt(Object.values(values)[0])+parseInt(Object.values(values)[1])});
+    });
   });
 
 // ---Rank Updaters---
@@ -874,7 +876,6 @@
   // Roller Function, must be passed the attribute value as an integer and the name of the test
   function attributeRoll(testAttribute, testName) {
     if (isNaN(parseInt(testAttribute))) { //Checks to see if the attribute is a defined number
-      whisper(`The attribute ${testAttribute} is not a number. Please check your sheet.`);
       return;
     };
     
@@ -955,6 +956,62 @@
     console.log(event)
     getAttrs([event.sourceAttribute+'test', event.sourceAttribute+'name'], (values) => {
       attributeRoll(parseInt(Object.values(values)[0]), Object.values(values)[1]);
+    });
+  });
+
+  // Sets up Action buttons for rolling Psychic Powers, needs custom roll as the difficulty is already specified
+  on('clicked:repeating_psychicpowers:psychicpowers', function(event) {
+    getAttrs([event.sourceAttribute+'test', event.sourceAttribute+'name'], (values) => {
+      const testAttribute = parseInt(Object.values(values)[0])
+      const testName = Object.values(values)[1];
+      if (isNaN(parseInt(testAttribute))) { //Checks to see if the attribute is a defined number
+        return;
+      };
+        
+      startRoll(`&{template:diceroll} {{name=${testName}}} {{roll=[[1d100]]}} {{result=[[0]]}} {{target=[[0]]}} {{dice=[[0]]}} {{sl=[[0]]}}`, (diceroll) => {
+        const dice = diceroll.results.roll.dice[0]; //This will be the value of the die that was rolled
+        const target = testAttribute; //Makes the target number for players to see 
+  
+        let result = 'Failure'; //Sets the default result to failure
+        if ((dice<6) || ((dice<96) && (dice<=target))) {  //Checks for automatic success or automatic failure and checks if the roll was successful
+          result = 'Success';
+        };
+  
+        let sl = Math.floor((target)/10)-Math.floor(dice/10); //Calculates the SL of the roll
+        if ((result == 'Success' && sl<0) || (result == 'Failure' && sl>0)) {  //Sets SL to 0 if the roll only succeeded/failed as an automatic success/automatic failure
+          sl = 0;
+        };
+  
+        // Sets correct descritptive Result based on SL
+        if (sl>4) {
+          result = 'Astounding Success';
+        };
+        if (sl<5 && sl>2) {
+          result = 'Impressive Success';
+        };
+        if (result == 'Success' && sl == 0) {
+          result = 'Marginal Success';
+        };
+        if (sl<-4) {
+          result = 'Astounding Failure';
+        };
+        if (sl>-5 && sl<-2) {
+          result = 'Impressive Failure';
+        };
+        if (result == 'Failure' && sl == 0) {
+          result = 'Marginal Failure';
+        };
+  
+        finishRoll(
+          diceroll.rollId, // Pass computed values to rolltemplate
+          {
+            dice: dice,
+            result: result,
+            target: target,
+            sl: sl
+          }
+        );
+      });
     });
   });
   
