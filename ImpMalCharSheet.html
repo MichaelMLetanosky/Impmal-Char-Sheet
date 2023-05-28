@@ -478,6 +478,11 @@
     <span>5</span>
     <span>6-0</span>
   </div>
+  <!-- Solars -->
+  <div>Solars</div>
+  <div>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_solarscurrent" value=0>
+  </div>
   <!-- Encumbrance -->
   <div>Encumbrance</div>
   <div>
@@ -486,13 +491,18 @@
   </div>
   <div>
     <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancecurrent" value=0 readonly>
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancemax" value=0 readonly>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancemax" value=40>
   </div>
-  <!-- Solars -->
-  <div>Solars</div>
+  <!-- Warp Charge -->
+  <div>Warp Charge</div>
   <div>
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_solarscurrent" value=0>
-  </div> 
+    <span>Current</span>
+    <span>Maximum</span>
+  </div>
+  <div>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_warpchargecurrent" value=0>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_warpchargemax" value=2>
+  </div>
   <!-- Weapons -->
   <div>Weapons</div>
   <div>
@@ -553,8 +563,36 @@
     <input type="text" name="attr_equipmentname" class="equipmentName" value="">
     <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
     <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
-  </fieldset>  
+  </fieldset>
   <!-- Psychic Powers -->
+  <div>Psychic Powers</div>
+  <div>
+    <span>Name</span>
+    <span>Warp Rating</span>
+    <span>Difficulty</span>
+    <span>Test</span>
+    <span>Range</span>
+    <span>Duration</span>
+    <span>Effect</span>
+  </div>
+  <fieldset class="repeating_psychicpowers">
+    <button type="action" name="act_psychicpowers" style="font-family: 'dicefontd10'">T</button>
+    <input type="text" name="attr_psychicpowersname" class="psychicPowersName" value="">
+    <input type="text" name="attr_psychicpowerswarprating" class="psychicPowersWarpRating" value="">
+    <select name="attr_psychicpowersdifficulty">
+      <option value=0 selected>Challenging +0</option>
+      <option value=60>Very Easy +60</option>
+      <option value=40>Easy +40</option>
+      <option value=20>Routine +20</option>
+      <option value=-10>Difficult -10</option>
+      <option value=-20>Hard -20</option>
+      <option value=-30>Very Hard -30</option>
+    </select>
+    <input type="text" name="attr_psychicpowerstest" class="psychicPowersTest" value="20" readonly>
+    <input type="text" name="attr_psychicpowersrange" class="psychicPowersRange" value="">
+    <input type="text" name="attr_psychicpowersduration" class="psychicPowersDuration" value="">
+    <input type="text" name="attr_psychicpowerseffect" class="psychicPowersEffect" value="">
+  </fieldset>
 </div>
 
 <!-- Roll Template -->
@@ -765,6 +803,9 @@
           setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weapontest']: specialization_value});
         });
 
+        if (event.sourceType !== 'player') {
+          return;
+        }
         previousValue = event.previousValue.toLowerCase().split(' ').join('').split('-').join('');
         let oldMatches = Object.entries(values).filter(item => item[1] == previousValue);
         if (oldMatches.length == 0) {
@@ -776,6 +817,27 @@
         });
       });
     });
+  });
+
+  // Psyker Powers Updaters
+
+  // Event Listener for change to Psychic Mastery
+  on('change:psychic_mastery', function(event) {
+    getSectionIDs('repeating_psychicpowers', (lookup) => {
+      getAttrs(['psychic_mastery', ...lookup.map(id => 'repeating_psychicpowers_'+id+'_psychicpowersdifficulty')], (values) => {
+        const psychic_mastery = parseInt(Object.values(values)[0]);
+        delete values[Object.keys(values)[0]];
+        values = Object.entries(values);
+
+        values.forEach(item => {
+          setAttrs({['repeating_psychicpowers_'+item[0].split('_')[2]+'_psychicpowerstest']: psychic_mastery+parseInt(item[1])});
+        });
+      });
+    });
+  });
+
+  on('change:repeating_psychicpowers:psychicpowersdifficulty', function(event) {
+    console.log(event)
   });
 
 // ---Rank Updaters---
