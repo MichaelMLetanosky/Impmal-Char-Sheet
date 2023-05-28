@@ -709,7 +709,6 @@
   });
 
   on('change:repeating_specializations:specialization change:repeating_specializations:specialization_name', function(event) {
-    console.log(event);
     getSectionIDs('repeating_weapons', (lookup) => {
       getAttrs(['repeating_specializations_specialization_name', 'repeating_specializations_specialization', ...lookup.map(id => 'repeating_weapons_'+id+'_weaponspecialization')], (values) => {
         const specialization_name = Object.values(values)[0].toLowerCase().split(' ').join('').split('-').join('');
@@ -729,14 +728,12 @@
 
         previousValue = event.previousValue.toLowerCase().split(' ').join('').split('-').join('');
         let oldMatches = Object.entries(values).filter(item => item[1] == previousValue);
-        console.log(previousValue, oldMatches);
         if (oldMatches.length == 0) {
           return;
         }
         oldMatches.forEach(item => {
-          console.log("updating")
           setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weaponspecialization']: 'n/a'});// Changes value to trigger recalculation
-          setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weaponspecialization']: previousValue});
+          setAttrs({['repeating_weapons_'+item[0].split('_')[2]+'_weaponspecialization']: previousValue}); //Changes value back to original
         });
       });
     });
