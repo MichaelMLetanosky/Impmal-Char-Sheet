@@ -446,19 +446,19 @@
 <!-- Start -->
 <div class="sheet-combat">
   <!-- Initiative -->
-  <button type="roll" name="roll_inititaive" value="[[@{selected|initiative} &{tracker}]]">Inititaive</button><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
+  <button type="roll" name="roll_inititaive" value="[[@{selected|initiative}+@{selected|reflexes}/100 &{tracker}]]">Inititaive</button><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_initiative" value=4 readonly>
   <!-- Wounds -->
   <span>Current Wounds</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_current_wounds">
   <span>Maximum Wounds</span><input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_maximum_wounds" value=8 readonly>
-  <!-- Worn Armor -->
+  <!-- Worn Armour -->
   <div>
-    <span>Armor</span>
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorHead" value="0">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorLeftArm" value="0">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorRightArm" value="0">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorLeftLeg" value="0">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorRightLeg" value="0">
-    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armorBody" value="0">
+    <span>Armour</span>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourHead" value="0">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftArm" value="0">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightArm" value="0">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftLeg" value="0">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightLeg" value="0">
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourBody" value="0">
   </div>
   <div>
     <span>Location</span>
@@ -478,8 +478,23 @@
     <span>5</span>
     <span>6-0</span>
   </div>
+  <!-- Encumbrance -->
+  <div>Encumbrance</div>
+  <div>
+    <span>Current</span>
+    <span>Maximum</span>
+  </div>
+  <div>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancecurrent" value=0 readonly>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancemax" value=0 readonly>
+  </div>
+  <!-- Solars -->
+  <div>Solars</div>
+  <div>
+    <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_solarscurrent" value=0>
+  </div> 
   <!-- Weapons -->
-  <legend>Weapons</legend>
+  <div>Weapons</div>
   <div>
     <span>Name</span>
     <span>Specialization</span>
@@ -511,10 +526,34 @@
     <input type="text" name="attr_weaponenc" class="weaponEnc" value="">
     <input type="text" name="attr_weapontraits" class="weaponTraits" value="">
   </fieldset>
-  <!-- Armor -->
+  <!-- Armour -->
+  <div>Armour</div>
+  <div>
+    <span>Name</span>
+    <span>Location</span>
+    <span>Armour</span>
+    <span>Enc.</span>
+    <span>Traits</span>
+  </div>
+  <fieldset class="repeating_armour">
+    <input type="text" name="attr_armourname" class="armourName" value="">
+    <input type="text" name="attr_armourlocation" class="armourLocation" value="">
+    <input type="text" name="attr_armourarmour" class="armourArmour" value="">
+    <input type="text" name="attr_armourenc" class="armourEnc" value="">
+    <input type="text" name="attr_armourtraits" class="armourTraits" value="">
+  </fieldset>
   <!-- Equipment -->
-  <!-- Encumbrance -->
-  <!-- Solars -->
+  <div>Equipment</div>
+  <div>
+    <span>Name</span>
+    <span>Enc.</span>
+    <span>Notes</span>
+  </div>
+  <fieldset class="repeating_equipment">
+    <input type="text" name="attr_equipmentname" class="equipmentName" value="">
+    <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
+    <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
+  </fieldset>  
   <!-- Psychic Powers -->
 </div>
 
@@ -858,5 +897,3 @@
   });
   
 </script>
-
-
