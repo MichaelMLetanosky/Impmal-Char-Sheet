@@ -496,10 +496,10 @@
     <select name="attr_weaponspecialization" id="weaponSpecialization">
       <option value="n/a" selected></option>
       <option value="brawling">Brawling</option>
-      <option value="one-handed">One-Handed</option>
-      <option value="two-handed">Two-Handed</option>
+      <option value="onehanded">One-Handed</option>
+      <option value="twohanded">Two-Handed</option>
       <option value="pistol">Pistol</option>
-      <option value="long gun">Long Gun</option>
+      <option value="longgun">Long Gun</option>
       <option value="ordanance">Ordnance</option>
       <option value="thrown">Thrown</option>
     </select>
@@ -601,6 +601,12 @@
   ];
 
 // ---Stat Updaters---
+
+  // Searches specializations for specific specialization name and returns the id
+  function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key].toLowerCase().split(' ').join('').split('-').join('') === value)  || 'n/a';
+  };
+
   // Event Listener for change to Characteristics & Skill ranks
   characteristics.forEach(characteristic => {
     on(`change:${characteristic.attribute} ${characteristic.skills.map(skill => 'change:'+skill+'_rank').join(' ')}`, () => { //Listens for changes to the characteristic and all skills effected by it
@@ -674,9 +680,9 @@
   on('change:repeating_weapons:weaponspecialization', function(event) {
     console.log(event);
     getSectionIDs('repeating_specializations', (lookup) => {//Get the ids and skills of all the specializations
-      console.log(lookup)
-     getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_name'), (specializationnames) => {
-      console.log(specializationnames)
+     getAttrs(lookup.map(id => 'repeating_specializations_'+id+'_specialization_name'), (specializationnames) => {
+      const specialization_id = getKeyByValue(specializationnames, event.newValue);
+      console.log(specialization_id)
 //        let matches = [];
 //        characteristic.skills.forEach(potential => {
 //          const holder = Object.entries(specializationskills).filter(item => item[1] == potentialskill);
@@ -716,7 +722,7 @@
     getAttrs(['repeating_specializations_specialization_rank'], (v) => {
       const rankValue = parseInt(v['repeating_specializations_specialization_rank'])/5 || 0;
 
-      // Increment the attribute value by 1, or cycle back to 0 if the incremented value is equal to 5.
+      // Increment the attribute value by 1, or cycle back to 1 if the incremented value is equal to 5.
       setAttrs({
         repeating_specializations_specialization_rank: 5*(((rankValue) % 4) + 1)
       });
