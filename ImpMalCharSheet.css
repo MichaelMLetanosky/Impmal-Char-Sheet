@@ -627,6 +627,43 @@ select {
   text-align: left;
 }
 
+/* ----PAGE 2---- */
+/* -------------- */
+
+.page2container {
+  display: grid;
+  grid-template-columns: 190px 190px 190px 190px;
+  grid-template-rows: 200px auto;
+  gap: 5px;
+  grid-template-areas: 
+  "page2section1 page2section2 page2section3 page2section4"
+  "page2section5 page2section5 page2section6 page2section6";
+}
+
+.page2section1 {
+  grid-area: page2section1;
+}
+
+.page2section2 {
+  grid-area: page2section2;
+}
+
+.page2section3 {
+  grid-area: page2section3;
+}
+
+.page2section4 {
+  grid-area: page2section4;
+}
+
+.page2section5 {
+  grid-area: page2section5;
+}
+
+.page2section6 {
+  grid-area: page2section6;
+}
+
 /* ID Section */
 
 #corruptionDiv {
