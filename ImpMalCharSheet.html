@@ -491,7 +491,7 @@
     <span>Traits</span>
   </div>
   <fieldset class="repeating_weapons">
-    <button type="action" name="act_specialization" style="font-family: 'dicefontd10'">T</button>
+    <button type="action" name="act_weapon" style="font-family: 'dicefontd10'">T</button>
     <input type="text" name="attr_weaponname" class="weaponName" value="">
     <select name="attr_weaponspecialization" id="weaponSpecialization">
       <option value="n/a" selected></option>
@@ -844,7 +844,15 @@
 
   // Sets up Action buttons for rolling Specializations
   on('clicked:repeating_specializations:specialization', function(event) {
-    getAttrs([event.sourceAttribute, event.sourceAttribute+'_name', event.sourceAttribute+'_skill'], (values) => {
+    getAttrs([event.sourceAttribute, event.sourceAttribute+'_name'], (values) => {
+      attributeRoll(parseInt(Object.values(values)[0]), Object.values(values)[1]);
+    });
+  });
+
+  // Sets up Action buttons for rolling Weapon attacks
+  on('clicked:repeating_weapons:weapon', function(event) {
+    console.log(event)
+    getAttrs([event.sourceAttribute+'test', event.sourceAttribute+'name'], (values) => {
       attributeRoll(parseInt(Object.values(values)[0]), Object.values(values)[1]);
     });
   });
