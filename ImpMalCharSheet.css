@@ -632,26 +632,30 @@ select {
 
 .page2container {
   display: grid;
-  grid-template-columns: 190px 190px 190px 190px;
-  grid-template-rows: 85px 85px auto;
+  grid-template-columns: 220px 180px 100px 70px 180px;
+  grid-template-rows: 100px 70px auto;
   gap: 5px;
   grid-template-areas: 
-  "page2section1 page2section2 page2section3 page2section3"
-  "page2section1 page2section2 page2section4 page2section4"
-  "page2section5 page2section5 page2section6 page2section6";
+  "page2section1 page2section3 page2section4 page2section4 page2section4"
+  "page2section2 page2section3 page2section5 page2section5 page2section5"
+  "page2section6 page2section6 page2section6 page2section7 page2section7";
 }
 
 /* Page 2 Section 1 */
 
 .page2section1 {
   grid-area: page2section1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .page2section1 .titleName {
   margin: 5px auto 8px;
   border: 5px groove darkgray;
   padding: 0px 5px;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   text-align: center;
 }
@@ -667,39 +671,42 @@ select {
 .page2section3 {
   grid-area: page2section3;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.page2section3 > div {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.page2section3 .wornArmourLabel {
-  border-bottom: 1px solid black;
-  padding: 0px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.page2section3 span:not(.wornArmourLabel) {
-  font-size: 11px;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.sheet-combat .page2container .page2section3 input {
-  height: 20px;
-  width: 40px;
+  justify-content: space-between;
 }
 
 /* Page 2 Section 4 */
 
 .page2section4 {
   grid-area: page2section4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.page2section4 > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page2section4 .wornArmourLabel {
+  border-bottom: 1px solid black;
+  padding: 0px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.page2section4 span:not(.wornArmourLabel) {
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.sheet-combat .page2container .page2section4 input {
+  height: 20px;
+  width: 40px;
 }
 
 /* Page 2 Section 5 */
@@ -712,6 +719,12 @@ select {
 
 .page2section6 {
   grid-area: page2section6;
+}
+
+/* Page 2 Section 7 */
+
+.page2section7 {
+  grid-area: page2section7;
 }
 
 /* ID Section */
