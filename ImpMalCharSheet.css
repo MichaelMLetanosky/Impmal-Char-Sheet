@@ -633,7 +633,7 @@ select {
 .page2container {
   display: grid;
   grid-template-columns: 220px 180px 100px 70px 180px;
-  grid-template-rows: 100px 70px auto;
+  grid-template-rows: 100px 35px auto;
   gap: 5px;
   grid-template-areas: 
   "page2section1 page2section3 page2section4 page2section4 page2section4"
@@ -664,6 +664,37 @@ select {
 
 .page2section2 {
   grid-area: page2section2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sheet-combat .page2container .page2section2 button {
+	background: none;
+	color: inherit;
+	border: none;
+  box-shadow: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-size: 13px;
+}
+
+.sheet-combat .page2container .page2section2 button::before {
+  content: "";
+}
+
+.sheet-combat .page2container .page2section2 input {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgb(233, 233, 233);
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 /* Page 2 Section 3 */
@@ -672,7 +703,8 @@ select {
   grid-area: page2section3;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Page 2 Section 4 */
@@ -713,6 +745,17 @@ select {
 
 .page2section5 {
   grid-area: page2section5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page2section5 > span {
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
 }
 
 /* Page 2 Section 6 */
