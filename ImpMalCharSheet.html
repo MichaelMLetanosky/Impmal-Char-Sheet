@@ -477,33 +477,34 @@
       </div>
     </div>
     <div class="page2section4">
-      <!-- Worn Armour -->
+      <!-- Current Armour -->
+      <div>Current Armour</div>
       <div>
-        <div>
+        <div class="armorContainer">
           <span>Head (1)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourHead" value="0">
         </div>
       </div>
       <div>
-        <div>
+        <div class="armorContainer">
           <span>L. Arm (2)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftArm" value="0">
         </div>
-        <div>
+        <div class="armorContainer">
           <span>Body (6-0)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourBody" value="0">
         </div>
-        <div>
+        <div class="armorContainer">
           <span>R. Arm (3)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightArm" value="0">
         </div>
       </div>
       <div>
-        <div>
+        <div class="armorContainer">
           <span>L. Leg (4)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftLeg" value="0">
         </div>
-        <div>
+        <div class="armorContainer">
           <span>R. Leg (5)</span>
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightLeg" value="0">
         </div>
@@ -521,40 +522,47 @@
     </div>
     <div class="page2section6">
       <!-- Weapons -->
-      <div>Weapons</div>
-      <div>
+      <h3>--------Weapons--------</h3>
+      <div class="weaponLabel">
         <span>Name</span>
-        <span>Specialization</span>
+        <span class="weaponSpecializationLabel">Specialization</span>
         <span>Test</span>
         <span>Damage</span>
-        <span>Range</span>
+        <span class="weaponRangeLabel">Range</span>
         <span>Mag.</span>
-        <span>Enc.</span>
-        <span>Traits</span>
       </div>
       <fieldset class="repeating_weapons">
-        <button type="action" name="act_weapon" style="font-family: 'dicefontd10'">T</button>
-        <input type="text" name="attr_weaponname" class="weaponName" value="">
-        <select name="attr_weaponspecialization" id="weaponSpecialization">
-          <option value="n/a" selected></option>
-          <option value="brawling">Brawling</option>
-          <option value="onehanded">One-Handed</option>
-          <option value="twohanded">Two-Handed</option>
-          <option value="pistol">Pistol</option>
-          <option value="longgun">Long Gun</option>
-          <option value="ordnance">Ordnance</option>
-          <option value="thrown">Thrown</option>
-        </select>
-        <input type="text" name="attr_weapontest" class="weaponTest" value="20" readonly>
-        <input type="text" name="attr_weapondamage" class="weaponDamage" value="">
-        <input type="text" name="attr_weaponrange" class="weaponRange" value="">
-        <input type="text" name="attr_weaponmagcurrent" class="weaponMagCurrent" value="">
-        <input type="text" name="attr_weaponmagmax" class="weaponMagMax" value="">
-        <input type="text" name="attr_weaponenc" class="weaponEnc" value="">
-        <input type="text" name="attr_weapontraits" class="weaponTraits" value="">
+        <div class="weaponContainer">
+          <button type="action" name="act_weapon" style="font-family: 'dicefontd10'">T</button>
+          <input type="text" name="attr_weaponname" class="weaponName" value="">
+          <select name="attr_weaponspecialization" id="weaponSpecialization">
+            <option value="n/a" selected></option>
+            <option value="brawling">Brawling</option>
+            <option value="onehanded">One-Handed</option>
+            <option value="twohanded">Two-Handed</option>
+            <option value="pistol">Pistol</option>
+            <option value="longgun">Long Gun</option>
+            <option value="ordnance">Ordnance</option>
+            <option value="thrown">Thrown</option>
+          </select>
+          <input type="text" name="attr_weapontest" class="weaponTest" value="20" readonly>
+          <input type="text" name="attr_weapondamage" class="weaponDamage" value="">
+          <input type="text" name="attr_weaponrange" class="weaponRange" value="">
+          <input type="text" name="attr_weaponmagcurrent" class="weaponMag" value="">
+          <span class="slash"></span>
+          <input type="text" name="attr_weaponmagmax" class="weaponMag" value="">
+          <div>
+            <span>Traits</span>
+            <input type="text" name="attr_weapontraits" class="weaponTraits" value="">
+          </div>
+          <div>
+            <span>Enc.</span>
+            <input type="text" name="attr_weaponenc" class="weaponEnc" value="">
+          </div>
+        </div>
       </fieldset>
       <!-- Psychic Powers -->
-      <div>Psychic Powers</div>
+      <h3>--------Psychic Powers--------</h3>
       <div>
         <span>Name</span>
         <span>Warp Rating</span>
