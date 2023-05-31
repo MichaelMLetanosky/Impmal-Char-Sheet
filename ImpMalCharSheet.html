@@ -511,14 +511,7 @@
       </div>
     </div>
     <div class="page2section5">
-      <!-- Solars -->
-      <div>Solars</div>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_solarscurrent" value=0>
-      <!-- Encumbrance -->
-      <span>Current Enc.</span>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancecurrent" value=0>
-      <span>Maximum Enc.</span>
-      <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancemax" value=40>
+      <!-- Add Critical Wounds -->
     </div>
     <div class="page2section6">
       <!-- Weapons -->
@@ -532,7 +525,7 @@
         <span>Mag.</span>
       </div>
       <fieldset class="repeating_weapons">
-        <div class="weaponContainer">
+        <div class="repeatingContainer">
           <button type="action" name="act_weapon" style="font-family: 'dicefontd10'">T</button>
           <input type="text" name="attr_weaponname" class="weaponName" value="">
           <select name="attr_weaponspecialization" id="weaponSpecialization">
@@ -548,14 +541,14 @@
           <input type="text" name="attr_weapontest" class="weaponTest" value="20" readonly>
           <input type="text" name="attr_weapondamage" class="weaponDamage" value="">
           <input type="text" name="attr_weaponrange" class="weaponRange" value="">
-          <input type="text" name="attr_weaponmagcurrent" class="weaponMag" value="">
-          <span class="slash"></span>
-          <input type="text" name="attr_weaponmagmax" class="weaponMag" value="">
+          <div class="magazineContainer">
+            <input type="text" name="attr_weaponmagcurrent" class="weaponMag" value="">
+            <span class="slash"></span>
+            <input type="text" name="attr_weaponmagmax" class="weaponMag" value="">
+          </div>
           <div>
             <span>Traits</span>
             <input type="text" name="attr_weapontraits" class="weaponTraits" value="">
-          </div>
-          <div>
             <span>Enc.</span>
             <input type="text" name="attr_weaponenc" class="weaponEnc" value="">
           </div>
@@ -565,61 +558,79 @@
       <h3>--------Psychic Powers--------</h3>
       <div>
         <span>Name</span>
-        <span>Warp Rating</span>
+        <span>WR</span>
         <span>Difficulty</span>
         <span>Test</span>
         <span>Range</span>
         <span>Duration</span>
-        <span>Effect</span>
       </div>
       <fieldset class="repeating_psychicpowers">
-        <button type="action" name="act_psychicpowers" style="font-family: 'dicefontd10'">T</button>
-        <input type="text" name="attr_psychicpowersname" class="psychicPowersName" value="">
-        <input type="text" name="attr_psychicpowerswarprating" class="psychicPowersWarpRating" value="">
-        <select name="attr_psychicpowersdifficulty">
-          <option value=0 selected>Challenging +0</option>
-          <option value=60>Very Easy +60</option>
-          <option value=40>Easy +40</option>
-          <option value=20>Routine +20</option>
-          <option value=-10>Difficult -10</option>
-          <option value=-20>Hard -20</option>
-          <option value=-30>Very Hard -30</option>
-        </select>
-        <input type="text" name="attr_psychicpowerstest" class="psychicPowersTest" value="20" readonly>
-        <input type="text" name="attr_psychicpowersrange" class="psychicPowersRange" value="">
-        <input type="text" name="attr_psychicpowersduration" class="psychicPowersDuration" value="">
-        <input type="text" name="attr_psychicpowerseffect" class="psychicPowersEffect" value="">
+        <div class="repeatingContainer">
+          <button type="action" name="act_psychicpowers" style="font-family: 'dicefontd10'">T</button>
+          <input type="text" name="attr_psychicpowersname" class="psychicPowersName" value="">
+          <input type="text" name="attr_psychicpowerswarprating" class="psychicPowersWarpRating" value="">
+          <select name="attr_psychicpowersdifficulty">
+            <option value=0 selected>Challenging +0</option>
+            <option value=60>Very Easy +60</option>
+            <option value=40>Easy +40</option>
+            <option value=20>Routine +20</option>
+            <option value=-10>Difficult -10</option>
+            <option value=-20>Hard -20</option>
+            <option value=-30>Very Hard -30</option>
+          </select>
+          <input type="text" name="attr_psychicpowerstest" class="psychicPowersTest" value="20" readonly>
+          <input type="text" name="attr_psychicpowersrange" class="psychicPowersRange" value="">
+          <input type="text" name="attr_psychicpowersduration" class="psychicPowersDuration" value="">
+          <div>
+            <span id="psychicPowerEffect">Effect</span>
+            <textarea type="text" name="attr_psychicpowerseffect" class="psychicPowersEffect" value="">asd</textarea>
+          </div>
+        </div>
       </fieldset>
     </div>
     <div class="page2section7">
-      <!-- Armour -->
-      <div>Armour</div>
       <div>
-        <span>Name</span>
-        <span>Location</span>
-        <span>Armour</span>
-        <span>Enc.</span>
-        <span>Traits</span>
+        <!-- Armour -->
+        <div>Armour</div>
+        <div>
+          <span>Name</span>
+          <span>Location</span>
+          <span>Armour</span>
+          <span>Enc.</span>
+          <span>Traits</span>
+        </div>
+        <fieldset class="repeating_armour">
+          <input type="text" name="attr_armourname" class="armourName" value="">
+          <input type="text" name="attr_armourlocation" class="armourLocation" value="">
+          <input type="text" name="attr_armourarmour" class="armourArmour" value="">
+          <input type="text" name="attr_armourenc" class="armourEnc" value="">
+          <input type="text" name="attr_armourtraits" class="armourTraits" value="">
+        </fieldset>
       </div>
-      <fieldset class="repeating_armour">
-        <input type="text" name="attr_armourname" class="armourName" value="">
-        <input type="text" name="attr_armourlocation" class="armourLocation" value="">
-        <input type="text" name="attr_armourarmour" class="armourArmour" value="">
-        <input type="text" name="attr_armourenc" class="armourEnc" value="">
-        <input type="text" name="attr_armourtraits" class="armourTraits" value="">
-      </fieldset>
-      <!-- Equipment -->
-      <div>Equipment</div>
       <div>
-        <span>Name</span>
-        <span>Enc.</span>
-        <span>Notes</span>
+        <!-- Solars -->
+        <div>Solars</div>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_solarscurrent" value=0>
+        <!-- Encumbrance -->
+        <span>Current Enc.</span>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancecurrent" value=0>
+        <span>Maximum Enc.</span>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_encumbrancemax" value=40>
       </div>
-      <fieldset class="repeating_equipment">
-        <input type="text" name="attr_equipmentname" class="equipmentName" value="">
-        <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
-        <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
-      </fieldset>
+      <div>
+        <!-- Equipment -->
+        <div>Equipment</div>
+        <div>
+          <span>Name</span>
+          <span>Enc.</span>
+          <span>Notes</span>
+        </div>
+        <fieldset class="repeating_equipment">
+          <input type="text" name="attr_equipmentname" class="equipmentName" value="">
+          <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
+          <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
+        </fieldset>
+      </div>
     </div>
   </div>
 </div>
