@@ -482,35 +482,39 @@
     </div>
     <div class="page2section4">
       <!-- Current Armour -->
-      <h5>Current Armour</h5>
-      <div>
-        <div class="armorContainer">
-          <span>Head (1)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourHead" value="0">
-        </div>
+      <div class="currentArmourContainer">
+        <h5>Current Armour</h5>
       </div>
-      <div>
-        <div class="armorContainer">
-          <span>L. Arm (2)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftArm" value="0">
+      <div class="currentArmourContainerInput">
+        <div>
+          <div class="armorContainer">
+            <span>Head (1)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourHead" value="0">
+          </div>
         </div>
-        <div class="armorContainer">
-          <span>Body (6-0)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourBody" value="0">
+        <div>
+          <div class="armorContainer">
+            <span>L. Arm (2)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftArm" value="0">
+          </div>
+          <div class="armorContainer">
+            <span>Body (6-0)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourBody" value="0">
+          </div>
+          <div class="armorContainer">
+            <span>R. Arm (3)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightArm" value="0">
+          </div>
         </div>
-        <div class="armorContainer">
-          <span>R. Arm (3)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightArm" value="0">
-        </div>
-      </div>
-      <div>
-        <div class="armorContainer">
-          <span>L. Leg (4)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftLeg" value="0">
-        </div>
-        <div class="armorContainer">
-          <span>R. Leg (5)</span>
-          <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightLeg" value="0">
+        <div>
+          <div class="armorContainer">
+            <span>L. Leg (4)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourLeftLeg" value="0">
+          </div>
+          <div class="armorContainer">
+            <span>R. Leg (5)</span>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" name="attr_armourRightLeg" value="0">
+          </div>
         </div>
       </div>
     </div>
@@ -518,29 +522,20 @@
       <!-- Add Critical Wounds -->
       <h5>Critical Wounds</h5>
       <div>
-        <input type="text" name="attr_criticalWoundName1" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect1" class="criticalWoundEffect" value="">
+        <span>Description</span>
+        <span>Treatable?</span>
       </div>
-      <div>
-        <input type="text" name="attr_criticalWoundName2" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect2" class="criticalWoundEffect" value="">
-      </div>
-      <div>
-        <input type="text" name="attr_criticalWoundName3" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect3" class="criticalWoundEffect" value="">
-      </div>
-      <div>
-        <input type="text" name="attr_criticalWoundName4" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect4" class="criticalWoundEffect" value="">
-      </div>
-      <div>
-        <input type="text" name="attr_criticalWoundName5" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect5" class="criticalWoundEffect" value="">
-      </div>
-      <div>
-        <input type="text" name="attr_criticalWoundName6" class= "criticalWoundName" value="">
-        <input type="text" name="attr_criticalWoundEffect6" class="criticalWoundEffect" value="">
-      </div>
+      <fieldset class="repeating_criticalwounds">
+        <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
+        <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div>
+          <span id="criticalWoundEffectLabel">Effect</span>
+          <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+        </div>
+      </fieldset>
     </div>
     <div class="page2section6">
       <!-- Weapons -->

@@ -635,10 +635,11 @@ select {
 .page2container {
   display: grid;
   grid-template-columns: 220px 70px 230px 20px 210px;
-  grid-template-rows: 100px auto auto;
+  grid-template-rows: 100px 25px auto auto;
   gap: 5px;
   grid-template-areas: 
   "page2section1 page2section2 page2section3 page2section3 page2section4"
+  "page2section6 page2section6 page2section6 . page2section4"
   "page2section6 page2section6 page2section6 page2section5 page2section5"
   "page2section6 page2section6 page2section6 page2section7 page2section7";
 }
@@ -748,12 +749,45 @@ select {
 .page2section4 {
   grid-area: page2section4;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: rgb(231, 231, 231);
+}
+
+.currentArmourContainer {
+  height: 100%;
+  width: 30px;
+  border-right: 1px dashed rgb(121, 121, 121);
+  border-radius: 10px;
+  background: rgb(241, 241, 241);
+}
+
+.currentArmourContainerInput {
+  height: 100%;
+  width: 180px;
+  border-right: 1px dashed rgb(121, 121, 121);
+  border-radius: 10px;
+}
+
+.page2section4 h5{
+  transform: rotate(-90deg);
+  margin-top: 25px;
+  font-size: 12px;
+  line-height: 12px;
+  width: 30px;
 }
 
 .page2section4 > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page2section4 > div > div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -777,28 +811,26 @@ select {
 .sheet-combat .page2container .page2section4 input {
   height: 20px;
   width: 40px;
+  background-color: rgb(250, 250, 250);
 }
 
 /* Page 2 Section 5 */
 
 .page2section5 {
   grid-area: page2section5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   padding: 3px;
-}
-
-.page2section5 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .sheet-combat .page2section5 .criticalWoundName {
   width: 33%;
+  height: 20px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sheet-combat .page2section5 .criticalWoundTreatable {
+  width: 20px;
   height: 15px;
   text-align: left;
   font-size: 11px;
@@ -1089,6 +1121,11 @@ select {
   margin-top: 2px;
   margin-bottom: auto;
   margin-right: 5px;
+}
+
+#criticalWoundEffectLabel {
+  margin-top: 2px;
+  vertical-align: top;
 }
 
 /* Roll Template */
