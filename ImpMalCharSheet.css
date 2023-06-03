@@ -634,12 +634,12 @@ select {
 
 .page2container {
   display: grid;
-  grid-template-columns: 220px 160px 140px 30px 220px;
-  grid-template-rows: 100px 35px auto;
+  grid-template-columns: 220px 70px 230px 20px 210px;
+  grid-template-rows: 100px auto auto;
   gap: 5px;
   grid-template-areas: 
-  "page2section1 page2section3 page2section4 page2section4 page2section5"
-  "page2section2 page2section3 page2section4 page2section4 page2section5"
+  "page2section1 page2section2 page2section3 page2section3 page2section4"
+  "page2section6 page2section6 page2section6 page2section5 page2section5"
   "page2section6 page2section6 page2section6 page2section7 page2section7";
 }
 
@@ -667,7 +667,7 @@ select {
 .page2section2 {
   grid-area: page2section2;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -704,17 +704,43 @@ select {
 .page2section3 {
   grid-area: page2section3;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
 .page2section3 > div {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.page2section3 > div > div {
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.page2section3 h5{
+  margin-bottom: 5px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid black;
+  line-height: 12px;
+}
+
+.sheet-combat .page2container .page2section3 input {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgb(233, 233, 233);
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 /* Page 2 Section 4 */
@@ -724,6 +750,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .page2section4 > div {
@@ -760,13 +787,30 @@ select {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 3px;
 }
 
-.page2section5 > span {
+.page2section5 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sheet-combat .page2section5 .criticalWoundName {
+  width: 33%;
+  height: 15px;
+  text-align: left;
   font-size: 11px;
   font-weight: bold;
-  font-style: italic;
-  text-align: center;
+}
+
+.sheet-combat .page2section5 .criticalWoundEffect {
+  width: 66%;
+  height: 15px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /* Page 2 Section 6 Weapons & Psychic Powers*/
