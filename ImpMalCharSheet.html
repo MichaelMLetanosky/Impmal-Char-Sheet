@@ -519,24 +519,24 @@
       </div>
     </div>
     <div class="page2section5">
-      <!-- Add Critical Wounds -->
-      <h5>--Critical Wounds--</h5>
-      <div class="repeatinglabel">
-        <span>Description</span>
-        <span>Treat?</span>
-      </div>
-      <fieldset class="repeating_criticalwounds">
-        <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
-        <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
-          <option value="no" selected>No</option>
-          <option value="yes">Yes</option>
-        </select>
-        <div>
-          <span id="criticalWoundEffectLabel">Effect</span>
-          <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+        <!-- Add Critical Wounds -->
+        <h5>--Critical Wounds--</h5>
+        <div class="repeatinglabel">
+          <span>Description</span>
+          <span>Treat?</span>
         </div>
-      </fieldset>
-      <div>
+        <fieldset class="repeating_criticalwounds">
+          <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
+          <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
+            <option value="no" selected>No</option>
+            <option value="yes">Yes</option>
+          </select>
+          <div>
+            <span id="criticalWoundEffectLabel">Effect</span>
+            <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+          </div>
+        </fieldset>
+      <div class="topBorder">
         <!-- Armour -->
         <h5>--Armour--</h5>
         <div>
@@ -554,7 +554,7 @@
           <input type="text" name="attr_armourtraits" class="armourTraits" value="">
         </fieldset>
       </div>
-      <div>
+      <div class="topBorder">
         <!-- Equipment -->
         <h5>--Equipment--</h5>
         <div>
@@ -568,7 +568,7 @@
           <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
         </fieldset>
       </div>
-      <div class="solarEncumbranceContainer">
+      <div class="solarEncumbranceContainer topBorder">
         <!-- Solars -->
         <div class="solarContainer">
           <span>--Solars--</span>
