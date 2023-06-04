@@ -557,15 +557,17 @@
       <div class="topBorder">
         <!-- Equipment -->
         <h5>--Equipment--</h5>
-        <div>
+        <div class="containerLabel">
           <span>Name</span>
           <span>Enc.</span>
-          <span>Notes</span>
         </div>
         <fieldset class="repeating_equipment">
-          <input type="text" name="attr_equipmentname" class="equipmentName" value="">
-          <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
-          <input type="text" name="attr_equipmentnotes" class="equipmentNotes" value="">
+          <div class="inputContainer">
+            <input type="text" name="attr_equipmentname" class="equipmentName" value="">
+            <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
+            <span id="equipmentNotesLabel">Notes</span>
+            <textarea id="equipmentNotes" rows="1"></textarea>
+          </div>
         </fieldset>
       </div>
       <div class="solarEncumbranceContainer topBorder">
