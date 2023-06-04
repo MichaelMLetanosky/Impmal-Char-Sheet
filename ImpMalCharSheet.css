@@ -730,6 +730,7 @@ select {
   margin-bottom: 5px;
   padding-bottom: 0px;
   border-bottom: 1px solid black;
+  border-radius: 2px;
   line-height: 12px;
 }
 
