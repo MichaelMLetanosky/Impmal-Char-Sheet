@@ -28,6 +28,7 @@ select {
   border-bottom: 1px solid black;
   width: 125px;
   text-align: center;
+  background-color: rgb(233, 233, 233);
 }
 
 .testing {
@@ -635,13 +636,12 @@ select {
 .page2container {
   display: grid;
   grid-template-columns: 220px 70px 230px 20px 210px;
-  grid-template-rows: 100px 25px auto auto;
+  grid-template-rows: 100px 25px auto;
   gap: 5px;
   grid-template-areas: 
   "page2section1 page2section2 page2section3 page2section3 page2section4"
   "page2section6 page2section6 page2section6 . page2section4"
-  "page2section6 page2section6 page2section6 page2section5 page2section5"
-  "page2section6 page2section6 page2section6 page2section7 page2section7";
+  "page2section6 page2section6 page2section6 page2section5 page2section5";
 }
 
 /* Page 2 Section 1 */
@@ -821,28 +821,91 @@ select {
   padding: 3px;
 }
 
+.page2section5 h5{
+  text-align: center;
+}
+
+.page2section5 .repeatinglabel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .sheet-combat .page2section5 .criticalWoundName {
-  width: 33%;
-  height: 20px;
+  width: 181px;
+  height: 18px;
   text-align: left;
   font-size: 12px;
   font-weight: bold;
 }
 
 .sheet-combat .page2section5 .criticalWoundTreatable {
-  width: 20px;
-  height: 15px;
-  text-align: left;
+  padding: 0px;
+  width: 45px;
+  height: 18px;
   font-size: 11px;
   font-weight: bold;
 }
 
 .sheet-combat .page2section5 .criticalWoundEffect {
-  width: 66%;
+  resize: vertical;
+  padding: 0px 2px;
+  width: 177px;
   height: 15px;
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
+  background-color: rgb(233, 233, 233);
+}
+
+.solarEncumbranceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.solarEncumbranceContainer .solarContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.solarEncumbranceContainer .encumbranceContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.sheet-combat .page2section5 .solarContainer span{
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.sheet-combat .page2section5 .encumbranceContainer > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.sheet-combat .page2section5 .encumbranceContainer span{
+  font-size: 10px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.sheet-combat .page2section5 .solarEncumbranceContainer input{
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgb(233, 233, 233);
+  border: none;
+  border-bottom: 1px solid black;
 }
 
 /* Page 2 Section 6 Weapons & Psychic Powers*/
@@ -1086,12 +1149,6 @@ select {
   resize: vertical;
 }
 
-/* Page 2 Section 7 Armor and Equipment*/
-
-.page2section7 {
-  grid-area: page2section7;
-}
-
 /* ID Section */
 
 #corruptionDiv {
@@ -1126,6 +1183,11 @@ select {
 #criticalWoundEffectLabel {
   margin-top: 2px;
   vertical-align: top;
+  font-size: 11px;
+}
+
+#solarsInput {
+  width: 80px;
 }
 
 /* Roll Template */
