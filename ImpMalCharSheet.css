@@ -199,6 +199,11 @@ select {
   width: 25px;
 }
 
+.ui-dialog .charsheet .sideBordersInput {
+  border-right: 1px solid rgb(145, 145, 145);
+  border-left: 1px solid rgb(145, 145, 145);
+}
+
 /* Page 1 Section 1 */
 
 .page1section1 .titleName {
@@ -886,6 +891,7 @@ select {
 .sheet-combat .page2section5 .criticalWoundEffect {
   resize: vertical;
   margin-top: 2px;
+  margin-bottom: 0px;
   border-bottom: 1px solid black;
   border-radius: 5px;
   padding: 0px 2px;
@@ -967,7 +973,7 @@ font-weight: bold;
 
 .page2section6 {
   grid-area: page2section6;
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(233, 233, 233);
   border-radius: 7px;
   padding: 5px;
 }
@@ -1142,6 +1148,40 @@ font-weight: bold;
   font-weight: bold;
 }
 
+.page2container .page2section6 .psychicPowerLabels{
+  display: grid;
+  grid-template-columns: 33px 186px 27px 121px 34px 66px;
+  grid-template-rows: auto;
+  justify-items: center;
+  grid-template-areas: 
+    ". psychicPowerNameLabel psychicPowerWRLabel psychicPowerDifficultyLabel psychicPowerTestLabel psychicPowerRangeLabel psychicPowerDurLabel";
+}
+
+.psychicPowerNameLabel {
+  grid-area: psychicPowerNameLabel;
+  justify-self: start;
+}
+
+.psychicPowerWRLabel {
+  grid-area: psychicPowerWRLabel;
+}
+
+.psychicPowerDifficultyLabel {
+  grid-area: psychicPowerDifficultyLabel;
+}
+
+.psychicPowerTestLabel {
+  grid-area: psychicPowerTestLabel;
+}
+
+.psychicPowerRangeLabel {
+  grid-area: psychicPowerRangeLabel;
+}
+
+.psychicPowerDurLabel {
+  grid-area: psychicPowerDurLabel;
+}
+
 .page2container .page2section6 .psychicPowersName{
   margin: 0px;
   padding: 0px 3px;
@@ -1242,14 +1282,22 @@ font-weight: bold;
   font-style: italic;
 }
 
+#armourNameLabel {
+  margin-right: 95px;
+}
+
 #armourNameInput {
-  width: 120px;
+  width: 125px;
   text-align: left;
 }
 
 #armourTraitsInput {
-  width: 130px;
+  width: 125px;
   text-align: left;
+}
+
+#armourEncInput {
+  margin-right: 8px;
 }
 
 #equipmentNotesLabel {

@@ -527,14 +527,14 @@
         </div>
         <fieldset class="repeating_criticalwounds">
           <div class="inputContainer bottomBorder">
-            <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
-            <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
+            <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName sideBordersInput" value="">
+            <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable sideBordersInput">
               <option value="no" selected>No</option>
               <option value="yes">Yes</option>
             </select>
             <div>
               <span id="criticalWoundEffectLabel">Effect</span>
-              <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+              <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect sideBordersInput" value=""></textarea>
             </div>
           </div>
         </fieldset>
@@ -542,19 +542,19 @@
         <!-- Armour -->
         <h5>--Armour--</h5>
         <div class="containerLabel">
-          <span>Name</span>
+          <span id="armourNameLabel">Name</span>
           <span>Location</span>
-          <span>Amt</span>
+          <span>Amr</span>
         </div>
         <fieldset class="repeating_armour">
           <div class="inputContainer bottomBorder">
-            <input type="text" name="attr_armourname" class="armourName narrowInput" id="armourNameInput" value="">
-            <input type="text" name="attr_armourlocation" class="armourLocation narrowInput" narrowInput value="">
-            <input type="text" name="attr_armourarmour" class="armourArmour narrowInput twoDigitInput" value="">
+            <input type="text" name="attr_armourname" class="armourName narrowInput sideBordersInput" id="armourNameInput" value="">
+            <input type="text" name="attr_armourlocation" class="armourLocation narrowInput sideBordersInput" narrowInput value="">
+            <input type="text" name="attr_armourarmour" class="armourArmour narrowInput twoDigitInput sideBordersInput" value="">
             <span>Traits</span>
-            <input type="text" name="attr_armourtraits" class="armourTraits narrowInput" id="armourTraitsInput" value="">
+            <input type="text" name="attr_armourtraits" class="armourTraits narrowInput sideBordersInput" id="armourTraitsInput" value="">
             <span>Enc.</span>
-            <input type="text" name="attr_armourenc" class="armourEnc narrowInput twoDigitInput" value="">
+            <input type="text" name="attr_armourenc" class="armourEnc narrowInput twoDigitInput sideBordersInput" id="armourEncInput" value="">
           </div>
         </fieldset>
       </div>
@@ -567,10 +567,10 @@
         </div>
         <fieldset class="repeating_equipment">
           <div class="inputContainer bottomBorder">
-            <input type="text" name="attr_equipmentname" class="equipmentName" value="">
-            <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
+            <input type="text" name="attr_equipmentname" class="equipmentName sideBordersInput" value="">
+            <input type="text" name="attr_equipmentenc" class="equipmentEnc sideBordersInput" value="">
             <span id="equipmentNotesLabel">Notes</span>
-            <textarea id="equipmentNotes" rows="1"></textarea>
+            <textarea class="sideBordersInput" id="equipmentNotes" rows="1"></textarea>
           </div>
         </fieldset>
       </div>
@@ -639,13 +639,13 @@
       </fieldset>
       <!-- Psychic Powers -->
       <h3>--------Psychic Powers--------</h3>
-      <div>
-        <span>Name</span>
-        <span>WR</span>
-        <span>Difficulty</span>
-        <span>Test</span>
-        <span>Range</span>
-        <span>Duration</span>
+      <div class="psychicPowerLabels">
+        <span class="psychicPowerNameLabel">Name</span>
+        <span class="psychicPowerWRLabel">WR</span>
+        <span class="psychicPowerDifficultyLabel">Difficulty</span>
+        <span class="psychicPowerTestLabel">Test</span>
+        <span class="psychicPowerRangeLabel">Range</span>
+        <span class="psychicPowerDurLabel">Dur.</span>
       </div>
       <fieldset class="repeating_psychicpowers">
         <div class="repeatingContainer">
