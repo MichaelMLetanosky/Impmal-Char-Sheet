@@ -31,10 +31,6 @@ select {
   background-color: rgb(233, 233, 233);
 }
 
-.testing {
-  border: 1px solid rgb(255, 0, 0);
-}
-
 /* Tabs */
 
 .charsheet .sheet-character,
@@ -159,6 +155,12 @@ select {
   border-top: 5px double rgb(155, 155, 155);
 }
 
+.bottomBorder {
+  margin-bottom: 4px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed rgb(109, 109, 109);
+}
+
 .leftBorder {
   margin-left: 4px;
   padding-left: 4px;
@@ -186,6 +188,15 @@ select {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.ui-dialog .charsheet .narrowInput {
+  height: 18px;
+  font-size: 11px;
+}
+
+.ui-dialog .charsheet .twoDigitInput {
+  width: 25px;
 }
 
 /* Page 1 Section 1 */
@@ -864,6 +875,7 @@ select {
 }
 
 .sheet-combat .page2section5 .criticalWoundTreatable {
+  margin-bottom: 0px;
   padding: 0px;
   width: 45px;
   height: 18px;
@@ -873,8 +885,11 @@ select {
 
 .sheet-combat .page2section5 .criticalWoundEffect {
   resize: vertical;
+  margin-top: 2px;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
   padding: 0px 2px;
-  width: 177px;
+  width: 182px;
   height: 15px;
   text-align: left;
   font-size: 12px;
@@ -884,17 +899,17 @@ select {
 
 .sheet-combat .page2section5 .equipmentName {
   width: 200px;
-  height: 25px;
+  height: 18px;
   text-align: left;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .sheet-combat .page2section5 .equipmentEnc {
 padding: 0px;
 width: 25px;
-height: 25px;
-font-size: 13px;
+height: 18px;
+font-size: 12px;
 font-weight: bold;
 }
 
@@ -1221,9 +1236,20 @@ font-weight: bold;
 }
 
 #criticalWoundEffectLabel {
-  margin-top: 2px;
+  margin-top: 3px;
   vertical-align: top;
   font-size: 11px;
+  font-style: italic;
+}
+
+#armourNameInput {
+  width: 120px;
+  text-align: left;
+}
+
+#armourTraitsInput {
+  width: 130px;
+  text-align: left;
 }
 
 #equipmentNotesLabel {
@@ -1236,9 +1262,10 @@ font-weight: bold;
   margin-top: 2px;
   resize: vertical;
   width: 180px;
-  height: 20px;
+  height: 12px;
   background: rgb(233, 233, 233);
   border-bottom: 1px solid black;
+  font-size: 12px;
   font-weight: bold;
 }
 

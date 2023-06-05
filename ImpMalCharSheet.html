@@ -526,32 +526,36 @@
           <span>Treat?</span>
         </div>
         <fieldset class="repeating_criticalwounds">
-          <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
-          <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
-            <option value="no" selected>No</option>
-            <option value="yes">Yes</option>
-          </select>
-          <div>
-            <span id="criticalWoundEffectLabel">Effect</span>
-            <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+          <div class="inputContainer bottomBorder">
+            <input type="text" name="attr_criticalWoundDescription" class= "criticalWoundName" value="">
+            <select name="attr_criticalWoundTreatable" class= "criticalWoundTreatable">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <div>
+              <span id="criticalWoundEffectLabel">Effect</span>
+              <textarea type="text" name="attr_criticalWoundEffect" class="criticalWoundEffect" value=""></textarea>
+            </div>
           </div>
         </fieldset>
       <div class="topBorder">
         <!-- Armour -->
         <h5>--Armour--</h5>
-        <div>
+        <div class="containerLabel">
           <span>Name</span>
           <span>Location</span>
-          <span>Armour</span>
-          <span>Enc.</span>
-          <span>Traits</span>
+          <span>Amt</span>
         </div>
         <fieldset class="repeating_armour">
-          <input type="text" name="attr_armourname" class="armourName" value="">
-          <input type="text" name="attr_armourlocation" class="armourLocation" value="">
-          <input type="text" name="attr_armourarmour" class="armourArmour" value="">
-          <input type="text" name="attr_armourenc" class="armourEnc" value="">
-          <input type="text" name="attr_armourtraits" class="armourTraits" value="">
+          <div class="inputContainer bottomBorder">
+            <input type="text" name="attr_armourname" class="armourName narrowInput" id="armourNameInput" value="">
+            <input type="text" name="attr_armourlocation" class="armourLocation narrowInput" narrowInput value="">
+            <input type="text" name="attr_armourarmour" class="armourArmour narrowInput twoDigitInput" value="">
+            <span>Traits</span>
+            <input type="text" name="attr_armourtraits" class="armourTraits narrowInput" id="armourTraitsInput" value="">
+            <span>Enc.</span>
+            <input type="text" name="attr_armourenc" class="armourEnc narrowInput twoDigitInput" value="">
+          </div>
         </fieldset>
       </div>
       <div class="topBorder">
@@ -562,7 +566,7 @@
           <span>Enc.</span>
         </div>
         <fieldset class="repeating_equipment">
-          <div class="inputContainer">
+          <div class="inputContainer bottomBorder">
             <input type="text" name="attr_equipmentname" class="equipmentName" value="">
             <input type="text" name="attr_equipmentenc" class="equipmentEnc" value="">
             <span id="equipmentNotesLabel">Notes</span>
